@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="itrans">
+	
+	<select id="itrans_list"
+	resultType="com.example.spring01.model.itrans.dto.ItransDTO">
+	select * from itrans
+	</select>
+	
+	<insert id="itrans_insert">
+		insert into itrans(
+		t_way,t_start,t_end,t_goback,t_writer,t_money
+		)
+		values
+		(
+		#{t_way},#{t_start},#{t_end},#{t_goback},#{t_writer},#{t_money}
+		)
+	</insert>
+	
+	<select id="itrans_modify" resultType="com.example.spring01.model.itrans.dto.ItransDTO">
+		select * from itrans
+		where t_no = #{t_no}
+	</select>
+	
+	<update id="itrans_update">
+		update itrans
+		set t_way = #{t_way},
+			t_start = #{t_start},
+			t_end = #{t_end},
+			t_goback = #{t_goback},
+			t_writer = #{t_writer},		
+			t_money = #{t_money}
+			where t_no = #{t_no}
+	</update>
+	
+	<delete id="itrans_delete">
+		delete from itrans where t_no = #{t_no}
+	</delete>
+</mapper>
+
+
