@@ -2,39 +2,45 @@ package com.example.spring01.model.iuser.dao;
 
 import java.util.List;
 
-import com.example.spring01.model.itrans.dao.ItransDAO;
-import com.example.spring01.model.itrans.dto.ItransDTO;
+import javax.inject.Inject;
 
-public class IuserDAOImpl implements ItransDAO {
+import org.apache.ibatis.session.SqlSession;
+
+import com.example.spring01.model.iuser.dto.IuserDTO;
+
+public class IuserDAOImpl implements IuserDAO {
+
+	@Inject
+	SqlSession sqlSession;
 
 	@Override
-	public List<ItransDTO> listItrans() {
+	public List<IuserDTO> listIuser() {
 		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectList("iuser.iuser_list");
 	}
 
 	@Override
-	public void insertItrans(ItransDTO dto) {
+	public void insertIuser(IuserDTO dto) {
 		// TODO Auto-generated method stub
-
+		sqlSession.insert("iuser.", dto);
 	}
 
 	@Override
-	public void updateItrans(ItransDTO dto) {
+	public void updateIuser(IuserDTO dto) {
 		// TODO Auto-generated method stub
-
+		sqlSession.update("iuser.iuser_update", dto);
 	}
 
 	@Override
-	public ItransDTO modifyItrans(int t_no) {
+	public IuserDTO modifyIuser(int u_no) {
 		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne("iuser.iuser_modify", u_no);
 	}
 
 	@Override
-	public void deleteItrans(int t_no) {
+	public void deleteIuser(int u_no) {
 		// TODO Auto-generated method stub
-
+		sqlSession.delete("iuser.iuser_delete", u_no);
 	}
 
 }

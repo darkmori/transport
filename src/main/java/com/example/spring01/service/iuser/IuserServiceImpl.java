@@ -2,39 +2,44 @@ package com.example.spring01.service.iuser;
 
 import java.util.List;
 
-import com.example.spring01.model.itrans.dto.ItransDTO;
-import com.example.spring01.service.itrans.ItransService;
+import javax.inject.Inject;
 
-public class IuserServiceImpl implements ItransService {
+import com.example.spring01.model.iuser.dao.IuserDAO;
+import com.example.spring01.model.iuser.dto.IuserDTO;
+
+public class IuserServiceImpl implements IuserService {
+
+	@Inject
+	IuserDAO iuserDao;
 
 	@Override
-	public List<ItransDTO> listItrans() {
+	public List<IuserDTO> listIuser() {
 		// TODO Auto-generated method stub
-		return null;
+		return iuserDao.listIuser();
 	}
 
 	@Override
-	public void insertItrans(ItransDTO dto) {
+	public void insertIuser(IuserDTO dto) {
 		// TODO Auto-generated method stub
-
+		iuserDao.insertIuser(dto);
 	}
 
 	@Override
-	public void updateItrans(ItransDTO dto) {
+	public void updateIuser(IuserDTO dto) {
 		// TODO Auto-generated method stub
-
+		iuserDao.updateIuser(dto);
 	}
 
 	@Override
-	public ItransDTO modifyItrans(int t_no) {
+	public IuserDTO modifyIuser(int u_no) {
 		// TODO Auto-generated method stub
-		return null;
+		return iuserDao.modifyIuser(u_no);
 	}
 
 	@Override
-	public void deleteItrans(int t_no) {
+	public void deleteIuser(int u_no) {
 		// TODO Auto-generated method stub
-
+		iuserDao.deleteIuser(u_no);
 	}
 
 }

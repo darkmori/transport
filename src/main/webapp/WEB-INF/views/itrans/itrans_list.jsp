@@ -9,7 +9,7 @@
 
 	<%@include file="../include/main_header.jsp"%>
 
-	<div class="modal-body">
+	<!-- <div class="modal-body">
 		<div class="row form-group">
 			<div class="col-md-6 h3">交通精算書</div>
 			<p class="col-md-6 media-right text-right h5">
@@ -44,40 +44,51 @@
 				</tr>
 
 			</table>
-		</div>
+		</div> -->
 
-		<table class="table table-bordered">
+		<table class="ui yellow celled table">
 			<thead>
 				<tr class="text-center" style="font-weight: bolder;">
-					<!-- <td style="visibility: hidden;">NO</td> -->
-					<td>交通手段</td>
-					<td>出発地</td>
-					<td>到着地</td>
-					<td>片/往</td>
-					<td>摘要</td>
-					<td>金額</td>
-					<td>修正</td>
+					<th class="one wide">日付</th>
+					<th class="two wide">交通手段</th>
+					<th class="one wide">出発地</th>
+					<th class="one wide">到着地</th>
+					<th>取引先</th>
+					<th class="one wide">片/往</th>
+					<th>摘要</th>
+					<th>金額</th>
+					<th class="one wide">修正</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="row" items="${dto}">
 					<tr>
 						<%-- <td style="visibility: hidden;">${row.t_no}</td>--%>
+						<td>${row.t_date}</td>
 						<td>${row.t_way}</td>
 						<td>${row.t_start}</td>
 						<td>${row.t_end}</td>
+						<td>${row.t_visit}</td>
 						<td>${row.t_goback}</td>
 						<td>${row.t_writer}</td>
 						<td>¥&nbsp;<fmt:formatNumber value='${row.t_money}' pattern="#,###" /></td>
-						<td><a href='${path}/itrans/modify.do/${row.t_no}' class="glyphicon glyphicon-pencil"></a> <a href='${path}/itrans/delete.do/${row.t_no}' onclick="return confirm('本当に削除しますか。');" class="glyphicon glyphicon-remove"></a>
+						<td>
+						<a href='${path}/itrans/modify.do/${row.t_no}'>
+							<i class="edit icon"></i>
+						</a> 
+						<a href='${path}/itrans/delete.do/${row.t_no}' onclick="return confirm('本当に削除しますか。');">
+							<i class="trash alternate icon"></i>
+						</a>
 					</tr>
 				</c:forEach>
 			</tbody>
 			<tfoot>
 				<tr style="">
-					<td colspan="4" style="visibility: hidden"></td>
+					<td colspan="6" style="visibility: hidden"></td>
 					<td>合計</td>
-					<td><!-- @{} --></td>
+					<td>
+						<!-- @{} -->
+					</td>
 				</tr>
 			</tfoot>
 		</table>

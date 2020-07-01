@@ -3,6 +3,8 @@ package com.example.spring01.model.itrans.dto;
 import java.sql.Date;
 
 public class ItransDTO {
+
+	private int u_no;
 	private int t_no;
 	private Date t_date;
 	private String t_way;
@@ -12,6 +14,14 @@ public class ItransDTO {
 	private String t_goback;
 	private String t_writer;
 	private int t_money;
+
+	public int getU_no() {
+		return u_no;
+	}
+
+	public void setU_no(int u_no) {
+		this.u_no = u_no;
+	}
 
 	public int getT_no() {
 		return t_no;
@@ -87,9 +97,9 @@ public class ItransDTO {
 
 	@Override
 	public String toString() {
-		return "ItransDTO [t_no=" + t_no + ", t_date=" + t_date + ", t_way=" + t_way + ", t_start=" + t_start
-				+ ", t_end=" + t_end + ", t_visit=" + t_visit + ", t_goback=" + t_goback + ", t_writer=" + t_writer
-				+ ", t_money=" + t_money + "]";
+		return "ItransDTO [u_no=" + u_no + ", t_no=" + t_no + ", t_date=" + t_date + ", t_way=" + t_way + ", t_start="
+				+ t_start + ", t_end=" + t_end + ", t_visit=" + t_visit + ", t_goback=" + t_goback + ", t_writer="
+				+ t_writer + ", t_money=" + t_money + "]";
 	}
 
 }

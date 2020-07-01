@@ -32,6 +32,8 @@ body>.grid {
 </head>
 
 <body>
+<%@include file="../include/main_header.jsp"%>
+<form action="${path}/iuser/login">
 	<div class="ui middle aligned center aligned grid">
 		<div class="column">
 			<h2 class="ui blue image header">
@@ -56,6 +58,7 @@ body>.grid {
 			</form>
 		</div>
 	</div>
+</form>
 </body>
 
 </html>

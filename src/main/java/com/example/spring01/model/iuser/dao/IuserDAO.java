@@ -12,7 +12,7 @@ public interface IuserDAO {
 
 	public void updateIuser(IuserDTO dto);
 
-	public IuserDTO modify(int u_no);
+	public IuserDTO modifyIuser(int u_no);
 
 	public void deleteIuser(int u_no);
 }
