@@ -9,43 +9,6 @@
 
 	<%@include file="../include/main_header.jsp"%>
 
-	<!-- <div class="modal-body">
-		<div class="row form-group">
-			<div class="col-md-6 h3">交通精算書</div>
-			<p class="col-md-6 media-right text-right h5">
-				申請日&nbsp;&nbsp;令和 <input type="text" name="year" class="input" style="width: 30px;"> 年 <input type="text" name="month" style="width: 30px;"> 月 <input type="text" name="day" style="width: 30px;"> 日
-			</p>
-		</div>
-		<div style="display: flex; position: relative; height: auto; justify-content: space-between;">
-			<table class="table table-bordered " style="width: 500px; margin-right: 400px;">
-
-				<tr class="text-center">
-					<td style="width: 15%;">name</td>
-					<td></td>
-				</tr>
-			</table>
-
-			<table class="table table-bordered " style="width: 280px;">
-
-				<tr class="text-center">
-					<td>渡辺</td>
-					<td>市川</td>
-					<td>経理</td>
-				</tr>
-
-
-				<tr>
-					<td>&nbsp;<br>&nbsp;
-					</td>
-					<td>&nbsp;<br>&nbsp;
-					</td>
-					<td>&nbsp;<br>&nbsp;
-					</td>
-				</tr>
-
-			</table>
-		</div> -->
-
 		<table class="ui yellow celled table">
 			<thead>
 				<tr class="text-center" style="font-weight: bolder;">
@@ -56,7 +19,7 @@
 					<th>取引先</th>
 					<th class="one wide">片/往</th>
 					<th>摘要</th>
-					<th>金額</th>
+					<th class="two wide" style="text-align: left;">金額</th>
 					<th class="one wide">修正</th>
 				</tr>
 			</thead>
