@@ -3,8 +3,11 @@ package com.example.spring01.service.iuser;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
+import javax.swing.plaf.ListUI;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.mvc.method.annotation.ViewMethodReturnValueHandler;
 
 import com.example.spring01.model.iuser.dao.IuserDAO;
 import com.example.spring01.model.iuser.dto.IuserDTO;
@@ -44,10 +47,15 @@ public class IuserServiceImpl implements IuserService {
 		// TODO Auto-generated method stub
 		iuserDao.deleteIuser(u_no);
 	}
-	
+
 	@Override
-	public String loginCheck(IuserDTO dto) {
-		return iuserDao.loginCheck(dto);
+	public String loginCheck(IuserDTO dto, HttpSession session) {
+		boolean result = iuserDao.loginCheck(dto);
+		if(result) {
+			IuserDTO dto= viewUser(dto);
+			session.setAttribute("u_email", dto.getU_mail());
+			session.setAttribute("", dto);
+		}
 	}
 
 }

@@ -67,13 +67,20 @@
 
 	<script>
 		function itrans_write() {
+			var t_date = $("#t_date").val();
 			var t_way = $("#t_way").val();
 			var t_start = $("#t_start").val();
 			var t_end = $("#t_end").val();
+			var t_visit = $("#t_visit").val();
 			var t_goback = $("#t_goback").val();
 			var t_writer = $("#t_writer").val();
 			var t_money = $("#t_money").val();
 
+			if (t_date == "") {
+				alert("日付を入力してください");
+				$("#t_date").focus();
+				return;
+			}
 			if (t_way == "") {
 				alert("交通手段を入力してください");
 				$("#t_way").focus();
@@ -89,6 +96,7 @@
 				$("#t_end").focus();
 				return;
 			}
+
 			if (t_writer == "") {
 				alert("摘要を入力してください");
 				$("#t_writer").focus();

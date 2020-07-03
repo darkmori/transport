@@ -60,11 +60,11 @@ public class IuserController {
 
 	@RequestMapping("login_check")
 	public ModelAndView login_check(IuserDTO dto, HttpSession session, ModelAndView mav) {
-		String name = iuserService.loginCheck(dto);
-		if (name != null) {
+		boolean result = iuserService.loginCheck(dto,session);
+		if (result == true) {
 			session.setAttribute("u_mail", dto.getU_mail());
-			session.setAttribute("u_namefirst", name);
-			mav.setViewName("redirect:/itrans/list.do");
+			session.setAttribute("u_namefirst", result);
+			mav.setViewName("redirect:/itrans/list");
 			mav.addObject("message", "success");
 		} else {
 			mav.setViewName("iuser/iuser_login");
