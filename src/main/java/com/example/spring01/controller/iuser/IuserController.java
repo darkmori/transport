@@ -1,8 +1,12 @@
 package com.example.spring01.controller.iuser;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -13,6 +17,8 @@ import com.example.spring01.service.iuser.IuserService;
 @Controller
 @RequestMapping("iuser/*")
 public class IuserController {
+
+	private static final Logger logger = LoggerFactory.getLogger(IuserController.class);
 
 	@Inject
 	IuserService iuserService;
@@ -28,7 +34,7 @@ public class IuserController {
 	@RequestMapping("insert")
 	public String insert(IuserDTO dto) {
 		iuserService.insertIuser(dto);
-		return "redirect:/iuser/list";
+		return "redirect:/iuser/iuser_list";
 	}
 
 	@RequestMapping("modify/{u_no}")
@@ -42,7 +48,36 @@ public class IuserController {
 	@RequestMapping("delete/{u_no}")
 	public String delete(@PathVariable int u_no) {
 		iuserService.deleteIuser(u_no);
-		return "redirect:/iuser/list";
+		return "redirect:/iuser/iuser_list";
 	}
 
+	// Login
+
+	@RequestMapping("login")
+	public String login() {
+		return "iuser/iuser_login";
+	}
+
+	@RequestMapping("login_check")
+	public ModelAndView login_check(IuserDTO dto, HttpSession session, ModelAndView mav) {
+		String name = iuserService.loginCheck(dto);
+		if (name != null) {
+			session.setAttribute("u_mail", dto.getU_mail());
+			session.setAttribute("u_namefirst", name);
+			mav.setViewName("redirect:/itrans/list.do");
+			mav.addObject("message", "success");
+		} else {
+			mav.setViewName("iuser/iuser_login");
+			mav.addObject("message", "error");
+		}
+
+		return mav;
+	}
+
+	@RequestMapping("logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+
+		return "redirect:/iuser/iuser_login";
+	}
 }

@@ -40,7 +40,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from iuser where u_no = #{u_no}
 	</delete>
 
-	<select id="login_check">
+	<select id="login_check" resultType="com.example.spring01.model.iuser.dto.IuserDTO">
 		select u_namefirst from iuser
 		where u_mail = #{u_mail} and u_password = #{u_password}
 	</select>

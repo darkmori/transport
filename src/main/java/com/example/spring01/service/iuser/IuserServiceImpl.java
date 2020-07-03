@@ -4,9 +4,12 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.springframework.stereotype.Service;
+
 import com.example.spring01.model.iuser.dao.IuserDAO;
 import com.example.spring01.model.iuser.dto.IuserDTO;
 
+@Service
 public class IuserServiceImpl implements IuserService {
 
 	@Inject
@@ -40,6 +43,11 @@ public class IuserServiceImpl implements IuserService {
 	public void deleteIuser(int u_no) {
 		// TODO Auto-generated method stub
 		iuserDao.deleteIuser(u_no);
+	}
+	
+	@Override
+	public String loginCheck(IuserDTO dto) {
+		return iuserDao.loginCheck(dto);
 	}
 
 }

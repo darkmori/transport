@@ -63,7 +63,6 @@
 			<tbody>
 				<c:forEach var="row" items="${dto}">
 					<tr>
-						<%-- <td style="visibility: hidden;">${row.t_no}</td>--%>
 						<td>${row.t_date}</td>
 						<td>${row.t_way}</td>
 						<td>${row.t_start}</td>
@@ -92,7 +91,7 @@
 				</tr>
 			</tfoot>
 		</table>
-		<input type="button" class="btn pull-right" onclick="location.href='${path}/itrans/write.do'" value="登録">
+		<input type="button" class="ui large primary submit button"" onclick="location.href='${path}/itrans/write.do'" value="登録">
 	</div>
 
 </body>

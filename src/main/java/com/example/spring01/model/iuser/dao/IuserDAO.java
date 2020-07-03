@@ -15,4 +15,6 @@ public interface IuserDAO {
 	public IuserDTO modifyIuser(int u_no);
 
 	public void deleteIuser(int u_no);
+	
+	public String loginCheck(IuserDTO dto);
 }

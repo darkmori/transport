@@ -32,15 +32,12 @@ body>.grid {
 </head>
 
 <body>
-<%@include file="../include/main_header.jsp"%>
-<form action="${path}/iuser/login">
 	<div class="ui middle aligned center aligned grid">
 		<div class="column">
 			<h2 class="ui blue image header">
-				<img src="themes/default/assets/images/logo_ils_min.png" class="image">
-				<div class="content">ILUCKSOLUTION</div>
+				<img src="" class="image"> ILUCKSOLUTION
 			</h2>
-			<form class="ui large form">
+			<form class="ui large form" action="${path}/iuser/login_check" method="post">
 				<div class="ui segment">
 					<div class="field">
 						<div class="ui left icon input">
@@ -52,13 +49,22 @@ body>.grid {
 							<i class="lock icon"></i> <input type="password" name="password" placeholder="Password">
 						</div>
 					</div>
-					<input type="button" value="ログイン" class="ui large primary submit button">
-					<div class="ui large yellow submit button">加入ページ</div>
+					<button type="submit" class="ui large primary submit button">ログイン</button>
+					<c:if test="${message == 'nologin' }">
+						<div style="color: red;">ログイン してください。</div>
+					</c:if>
+
+					<c:if test="${message == 'error' }">
+						<div style="color: red;">アイティーとパスワードが違います。</div>
+					</c:if>
+
+					<c:if test="${message == 'logout' }">
+						<div style="color: red;">Logoutされました。</div>
+					</c:if>
 				</div>
 			</form>
 		</div>
 	</div>
-</form>
 </body>
 
 </html>

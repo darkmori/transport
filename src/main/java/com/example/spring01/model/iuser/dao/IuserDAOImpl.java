@@ -5,9 +5,11 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
 
 import com.example.spring01.model.iuser.dto.IuserDTO;
 
+@Repository
 public class IuserDAOImpl implements IuserDAO {
 
 	@Inject
@@ -41,6 +43,11 @@ public class IuserDAOImpl implements IuserDAO {
 	public void deleteIuser(int u_no) {
 		// TODO Auto-generated method stub
 		sqlSession.delete("iuser.iuser_delete", u_no);
+	}
+
+	@Override
+	public String loginCheck(IuserDTO dto) {
+		return sqlSession.selectOne("iuser.login_check", dto);
 	}
 
 }

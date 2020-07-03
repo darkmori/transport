@@ -23,7 +23,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(final Locale locale, final Model model) {
 		
-		return "redirect:/itrans/list.do";
+		return "redirect:/iuser/login";
 	}
 	
 }

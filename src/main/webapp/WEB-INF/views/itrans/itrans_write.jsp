@@ -10,7 +10,7 @@
 <body>
 	<%@include file="../include/main_header.jsp"%>
 
-	<form method="POST" role="form" class="ui large form container" name="itrans_form">
+	<form method="POST" role="form" class="ui large form container" name="itrans_form" style="width: 350px">
 		<div class="ui segment">
 			<div class="ui calendar field" id="date_calendar">
 				<div class="ui input left icon">
@@ -124,7 +124,7 @@
 							var year = date.getFullYear();
 							var day = date.getDate();
 							var month = date.getMonth() + 1;
-							return year + '年' + month + '月' + day + '日';
+							return year + '-' + month + '-' + day;
 							/* return year + '/' + month + '/' + day; */
 						}
 					}
