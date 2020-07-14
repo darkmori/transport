@@ -3,7 +3,6 @@ package com.example.spring01.model.iuser.dao;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -48,19 +47,7 @@ public class IuserDAOImpl implements IuserDAO {
 
 	@Override
 	public String loginCheck(IuserDTO dto) {
-		return sqlSession.selectOne("iuser.loginCheck", dto);
-	}
-
-	@Override
-	public IuserDTO viewIuser(IuserDTO dto) {
-		// TODO Auto-generated method stub
-		return sqlSession.selectOne("iuser.viewIuser", dto);
-	}
-
-	@Override
-	public void logout(HttpSession session) {
-		// TODO Auto-generated method stub
-
+		return sqlSession.selectOne("iuser.login_check", dto);
 	}
 
 }

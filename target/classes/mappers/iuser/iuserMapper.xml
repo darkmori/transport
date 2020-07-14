@@ -40,9 +40,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from iuser where u_no = #{u_no}
 	</delete>
 
-	<select id="login_check" resultType="com.example.spring01.model.iuser.dto.IuserDTO">
+	<select id="loginCheck" resultType="String">
 		select u_namefirst from iuser
 		where u_mail = #{u_mail} and u_password = #{u_password}
+	</select>
+	
+	<select id="viewIuser" resultType="com.example.spring01.model.iuser.dto.IuserDTO">
+		SELECT
+		 u_mail,u_namefirst,u_namelast,u_katafirst,u_katalast,u_gender
+		FROM iuser
+		WHERE u_mail = #{u_mail} AND u_password = #{u_password}
 	</select>
 
 </mapper>

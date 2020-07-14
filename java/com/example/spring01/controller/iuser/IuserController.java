@@ -2,13 +2,11 @@ package com.example.spring01.controller.iuser;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
-import javax.swing.text.StyledEditorKit.BoldAction;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -53,37 +51,25 @@ public class IuserController {
 		return "redirect:/iuser/iuser_list";
 	}
 
-	// 로그인 화면
-	@RequestMapping("login.do")
-	public String login() {
-		return "iuser/iuser_login";
-	}
-
-	// 로그인 처리
-	@RequestMapping("loginCheck.do")
-	public ModelAndView loginCheck(@ModelAttribute IuserDTO dto, HttpSession session, ModelAndView mav) {
-		String name = iuserService.loginCheck(dto);
-
-		if (name != null) {
-			session.setAttribute("u_mail", dto.getU_mail());
-			session.setAttribute("u_namefirst", name);
-			mav.setViewName("redirect:itrans/itrans_list");
-			mav.addObject("msg", "success");
-		} else {
-			mav.setViewName("iuser/iuser_login");
-			mav.addObject("msg", "failure");
-		}
-		return mav;
-	}
-
-	// 로그아웃 처리
-	@RequestMapping("logout.do")
-	public ModelAndView logout(HttpSession session) {
-		iuserService.logout(session);
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("iuser/login");
-		mav.addObject("msg", "logout");
-		return mav;
-	}
-
+	// Login
+	/*
+	 * @RequestMapping("login") public String login() { return "iuser/iuser_login";
+	 * }
+	 * 
+	 * @RequestMapping("login_check") public ModelAndView login_check(IuserDTO dto,
+	 * HttpSession session, ModelAndView mav) { boolean result =
+	 * iuserService.loginCheck(dto,session); if (result == true) {
+	 * session.setAttribute("u_mail", dto.getU_mail());
+	 * session.setAttribute("u_namefirst", result);
+	 * mav.setViewName("redirect:/itrans/list"); mav.addObject("message",
+	 * "success"); } else { mav.setViewName("iuser/iuser_login");
+	 * mav.addObject("message", "error"); }
+	 * 
+	 * return mav; }
+	 * 
+	 * @RequestMapping("logout") public String logout(HttpSession session) {
+	 * session.invalidate();
+	 * 
+	 * return "redirect:/iuser/iuser_login"; }
+	 */
 }

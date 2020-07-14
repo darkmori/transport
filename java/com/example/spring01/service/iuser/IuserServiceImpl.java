@@ -48,18 +48,5 @@ public class IuserServiceImpl implements IuserService {
 		iuserDao.deleteIuser(u_no);
 	}
 
-	@Override
-	public String loginCheck(IuserDTO dto) {
-		return iuserDao.loginCheck(dto);
-	}
 
-	@Override
-	public IuserDTO viewIuser(IuserDTO dto) {
-		return iuserDao.viewIuser(dto);
-	}
-
-	@Override
-	public void logout(HttpSession session) {
-		session.invalidate();
-	}
 }
