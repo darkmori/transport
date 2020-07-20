@@ -76,7 +76,7 @@
 				</div>
 			</div>
 			<div class="field">
-				 <select name="t_goback" id="t_goback" class="ui selection dropdown">
+				<select name="t_goback" id="t_goback" class="ui selection dropdown">
 					<c:choose>
 						<c:when test="${dto.t_goback == '片'}">
 							<option value="片" selected="selected">片</option>

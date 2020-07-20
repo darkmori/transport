@@ -46,10 +46,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from itrans where t_no = #{t_no}
 	</delete>
 
-	<select id="itrans_sum"
-		resultType="com.example.spring01.model.itrans.dto.ItransDTO">
-		select sum(t_money) from itrans order by t_date asc
-	</select>
+
 </mapper>
 
 

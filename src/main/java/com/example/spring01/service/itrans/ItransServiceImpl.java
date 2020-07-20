@@ -3,9 +3,7 @@ package com.example.spring01.service.itrans;
 import java.util.List;
 
 import javax.inject.Inject;
-
 import org.springframework.stereotype.Service;
-
 import com.example.spring01.model.itrans.dao.ItransDAO;
 import com.example.spring01.model.itrans.dto.ItransDTO;
 
@@ -17,7 +15,6 @@ public class ItransServiceImpl implements ItransService {
 
 	@Override
 	public List<ItransDTO> listItrans() {
-		// TODO Auto-generated method stub
 		return itransDao.listItrans();
 	}
 

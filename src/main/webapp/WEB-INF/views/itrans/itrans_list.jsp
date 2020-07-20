@@ -12,7 +12,7 @@
 	<table class="ui yellow celled table">
 		<thead>
 			<tr class="text-center" style="font-weight: bolder;">
-				<th class="one wide">日付</th>
+				<th class="two wide">日付</th>
 				<th class="two wide">交通手段</th>
 				<th class="one wide">出発地</th>
 				<th class="one wide">到着地</th>
@@ -46,12 +46,11 @@
 			<tr style="">
 				<td colspan="6" style="visibility: hidden"></td>
 				<td>合計</td>
-				<td>¥&nbsp;<c:out value="${sum }" /></td>
+				<td>¥&nbsp;<fmt:formatNumber value='${sum}' pattern="#,###" /></td>
 			</tr>
 		</tfoot>
 	</table>
 	<input type="button" class="ui large primary submit button" onclick="location.href='${path}/itrans/write.do'" value="登録">
-	</div>
 
 </body>
 </html>
