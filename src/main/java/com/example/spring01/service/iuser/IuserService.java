@@ -18,11 +18,8 @@ public interface IuserService {
 
 	public void deleteIuser(int u_no);
 
-	/*
-	 * public String loginCheck(IuserDTO dto);
-	 * 
-	 * public IuserDTO viewIuser(IuserDTO dto);
-	 * 
-	 * public void logout(HttpSession session);
-	 */
+	public String loginCheck(IuserDTO dto);
+
+	public IuserDTO viewIuser(IuserDTO dto);
+
 }

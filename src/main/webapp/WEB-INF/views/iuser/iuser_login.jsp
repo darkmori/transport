@@ -12,31 +12,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-<script>
-	$(document).ready(function() {
-		$("#btnLogin").click(function() {
-			// 태크.val() : 태그에 입력된 값
-			// 태크.val("값") : 태그의 값을 변경 
-			var u_mail = $("#u_mail").val();
-			var u_password = $("#u_password").val();
-			if (u_mail == "") {
-				alert("아이디를 입력하세요.");
-				$("#u_mail").focus(); // 입력포커스 이동
-				return; // 함수 종료
-			}
-			if (u_password == "") {
-				alert("아이디를 입력하세요.");
-				$("#u_password").focus();
-				return;
-			}
-			alert("로그인 하셨습니다.");
-			// 폼 내부의 데이터를 전송할 주소
-			document.form1.action = "${path}/itrans/list.do"
-			// 제출
-			document.form1.submit();
-		});
-	});
-</script>
 <style type="text/css">
 body {
 	background-color: #eeeeee;
@@ -62,7 +37,7 @@ body>.grid {
 			<h2 class="ui blue image header">
 				<img src="http://placehold.it/40x40" class="image"> ILUCKSOLUTION
 			</h2>
-			<form class="ui large form" id="form1" method="post">
+			<form class="ui large form" id="form1" name="form1" method="post" action="${path}/iuser/loginCheck.do">
 				<div class="ui segment">
 					<div class="field">
 						<div class="ui left icon input">

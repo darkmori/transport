@@ -1,7 +1,10 @@
 package com.example.spring01.controller.iuser;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -56,29 +59,39 @@ public class IuserController {
 		return "redirect:/iuser/list";
 	}
 
-	/*
-	 * // 로그인 화면
-	 * 
-	 * @RequestMapping("login.do") public String login() { return
-	 * "iuser/iuser_login"; }
-	 * 
-	 * // 로그인 처리
-	 * 
-	 * @RequestMapping("loginCheck.do") public ModelAndView
-	 * loginCheck(@ModelAttribute IuserDTO dto, HttpSession session, ModelAndView
-	 * mav) { String name = iuserService.loginCheck(dto);
-	 * 
-	 * if (name != null) { session.setAttribute("u_mail", dto.getU_mail());
-	 * session.setAttribute("u_namefirst", name);
-	 * mav.setViewName("redirect:itrans/itrans_list"); mav.addObject("msg",
-	 * "success"); } else { mav.setViewName("iuser/iuser_login");
-	 * mav.addObject("msg", "failure"); } return mav; }
-	 * 
-	 * // 로그아웃 처리
-	 * 
-	 * @RequestMapping("logout.do") public ModelAndView logout(HttpSession session)
-	 * { iuserService.logout(session); ModelAndView mav = new ModelAndView();
-	 * mav.setViewName("iuser/login"); mav.addObject("msg", "logout"); return mav; }
-	 */
+	// 로그인 화면
+
+	@RequestMapping("login.do")
+	public String login() {
+		return "iuser/iuser_login";
+	}
+
+	// 로그인 처리
+
+	@RequestMapping("loginCheck.do")
+	public ModelAndView loginCheck(@ModelAttribute IuserDTO dto, HttpSession session, ModelAndView mav) {
+		
+		String name = iuserService.loginCheck(dto);
+
+		if (name != null) {
+			session.setAttribute("u_mail", dto.getU_mail());
+			session.setAttribute("u_namefirst", name);
+			mav.setViewName("redirect:itrans/itrans_list");
+			mav.addObject("msg", "success");
+		} else {
+			mav.setViewName("iuser/iuser_login");
+			mav.addObject("msg", "failure");
+		}
+		return mav;
+	}
+
+	// 로그아웃 처리
+
+	@RequestMapping("logout.do")
+	public String logout(HttpSession session) {
+		session.invalidate();
+
+		return "redirect:iuser/iuser_login";
+	}
 
 }
