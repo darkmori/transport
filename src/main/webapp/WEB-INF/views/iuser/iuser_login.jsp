@@ -50,14 +50,6 @@ body>.grid {
 						</div>
 					</div>
 					<button type="submit" class="ui large primary submit button" id="btnLogin">ログイン</button>
-
-					<c:if test="${message == 'failure' }">
-						<div style="color: red;">アイティーとパスワードが違います。</div>
-					</c:if>
-
-					<c:if test="${message == 'logout' }">
-						<div style="color: red;">Logoutされました。</div>
-					</c:if>
 				</div>
 			</form>
 		</div>
