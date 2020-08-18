@@ -35,22 +35,21 @@ body>.grid {
 	<div class="ui middle aligned center aligned grid">
 		<div class="column">
 			<h2 class="ui blue image header">
-				<img src="http://placehold.it/40x40" class="image"> ILUCKSOLUTION
+				<img src="http://placehold.it/40x40" class="image"> 管理者ログイン
 			</h2>
-			<form class="ui large form" id="form1" name="form1" method="post" action="${path}/iuser/loginCheck.do">
+			<form class="ui large form" id="form1" name="form1" method="post" action="${path}/iadmin/loginCheck.do">
 				<div class="ui segment">
 					<div class="field">
 						<div class="ui left icon input">
-							<i class="user icon"></i> <input type="email" name="u_mail" id="u_mail" placeholder="E-mail address">
+							<i class="user icon"></i> <input type="email" name="a_mail" id="a_mail" placeholder="E-mail address">
 						</div>
 					</div>
 					<div class="field">
 						<div class="ui left icon input">
-							<i class="lock icon"></i> <input type="password" name="u_password" id="u_password" placeholder="Password">
+							<i class="lock icon"></i> <input type="password" name="a_password" id="a_password" placeholder="Password">
 						</div>
 					</div>
 					<button type="submit" class="ui large primary submit button" id="btnLogin">ログイン</button>
-					<button type="button" class="ui large primary green button" id="btnAdmin">管理者ページ</button>
 				</div>
 			</form>
 		</div>

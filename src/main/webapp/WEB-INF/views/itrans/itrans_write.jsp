@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -10,58 +11,92 @@
 <body>
 	<%@include file="../include/main_header.jsp"%>
 
-	<form method="POST" role="form" class="ui large form container" name="itrans_form" style="width: 350px">
+	<form method="POST" role="form" class="ui large form container"
+		name="itrans_form" style="width: 770px">
 		<div class="ui segment">
-			<div class="ui calendar field" id="date_calendar">
-				<div class="ui input left icon">
-					<i class="calendar icon"></i> <input type="text" placeholder="日付 (必須)" id="t_date" name="t_date">
+			<div class="two fields">
+				<div class="ui calendar field" id="date_calendar">
+					<div class="ui input left icon">
+						<i class="calendar icon"></i> <input type="text"
+							placeholder="日付 (必須)" id="t_date" name="t_date">
+					</div>
+				</div>
+				<div class="field">
+					<select name="t_way" id="t_way" class="ui selection dropdown">
+						<option value="">--交通手段--</option>
+						<option value="バス">バス</option>
+						<option value="電車">電車</option>
+						<option value="タクシー">タクシー</option>
+						<option value="車">車</option>
+					</select>
+				</div>
+			</div>
+			<div class="two fields">
+				<div class="field">
+					<div class="ui left icon input">
+						<i class="location arrow icon"></i> <input type="text"
+							name="t_start" id="t_start" placeholder="出発地  (必須)">
+					</div>
+				</div>
+				<div class="field">
+					<div class="ui left icon input">
+						<i class="map marker icon"></i><input type="text" name="t_end"
+							id="t_end" placeholder="到着地  (必須)">
+					</div>
+				</div>
+			</div>
+			<div class="two fields">
+				<div class="field">
+					<select name="t_goback" id="t_goback" class="ui selection dropdown">
+						<option value="片">片</option>
+						<option value="往">往</option>
+					</select>
+				</div>
+				<div class="field">
+					<div class="ui left icon input">
+						<i class="briefcase icon"></i> <input type="text" name="t_visit"
+							id="t_visit" placeholder="訪問先">
+					</div>
 				</div>
 			</div>
 			<div class="field">
-				<select name="t_way" id="t_way" class="ui selection dropdown">
-					<option value="">--交通手段--</option>
-					<option value="バス">バス</option>
-					<option value="電車">電車</option>
-					<option value="タクシー">タクシー</option>
-					<option value="車">車</option>
-				</select>
-			</div>
-			<div class="field">
 				<div class="ui left icon input">
-					<i class="location arrow icon"></i> <input type="text" name="t_start" id="t_start" placeholder="出発地  (必須)">
+					<i class="location train icon"></i> <input type="text"
+						name="t_s_sen" id="t_s_sen" placeholder="電車の場合、路線を入力してください。">
 				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
-					<i class="map marker icon"></i><input type="text" name="t_end" id="t_end" placeholder="到着地  (必須)">
+					<i class="location train icon"></i> <input type="text"
+						name="t_e_sen" id="t_e_sen" placeholder="電車の場合、路線を入力してください。">
 				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
-					<i class="briefcase icon"></i> <input type="text" name="t_visit" id="t_visit" placeholder="訪問先">
+					<i class="location train icon"></i> <input type="text"
+						name="t_e_sen" id="t_e_sen" placeholder="電車の場合、路線を入力してください。">
 				</div>
 			</div>
-			<div class="field">
-				<select name="t_goback" id="t_goback" class="ui selection dropdown">
-					<option value="片">片</option>
-					<option value="往">往</option>
-				</select>
-			</div>
-			<div class="field">
-				<div class="ui left icon input">
-					<i class="pencil alternate icon"></i> <input type="text" name="t_writer" id="t_writer" placeholder="摘要  (必須)">
+				<div class="field">
+					<div class="ui left icon input">
+						<i class="pencil alternate icon"></i> <input type="text"
+							name="t_writer" id="t_writer" placeholder="備考">
 
+					</div>
+				</div>
+				<div class="field">
+					<div class="ui left icon input">
+						<i class="yen sign icon"></i><input type="text" name="t_money"
+							id="t_money" placeholder="金額  (必須)">
+					</div>
 				</div>
 			</div>
 			<div class="field">
-				<div class="ui left icon input">
-					<i class="yen sign icon"></i><input type="text" name="t_money" id="t_money" placeholder="金額  (必須)">
-				</div>
+				<input type="button" value="登録" class="ui primary button "
+					onclick="javascript:itrans_write()"> <input type="button"
+					value="キャンセル" class="ui button"
+					onclick="location.href='${path}/itrans/list.do'">
 			</div>
-			<div>
-				<input type="button" value="登録" class="ui primary button" onclick="javascript:itrans_write()"> <input type="button" value="トップへ" class="ui button" onclick="location.href='${path}/itrans/list.do'">
-			</div>
-		</div>
 	</form>
 
 

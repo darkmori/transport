@@ -9,20 +9,10 @@
 
 <body>
 	<%@include file="../include/main_header.jsp"%>
-	<form method="POST" role="form" class="ui large form container" name="itrans_form">
+	<form method="POST" role="form" class="ui large form container" name="itrans_form" style="width: 350px">
 		<div class="ui segment">
 			<div>
 				<input type="hidden" name="u_no" id="u_no" value="${dto.u_no} ">
-			</div>
-			<div class="field">
-				<div class="ui left icon input">
-					<i class="envelope icon"></i> <input type="email" name="u_mail" id="u_mail" placeholder="メール  (必須)" value="${dto.u_mail }">
-				</div>
-			</div>
-			<div class="field">
-				<div class="ui left icon input">
-					<i class="lock icon"></i> <input type="password" name="u_password" id="u_password" placeholder="パスワード  (必須)" value="${dto.u_password }">
-				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
@@ -44,18 +34,17 @@
 					<i class="address card outline icon"></i> <input type="text" name="u_katalast" id="u_katalast" placeholder="名前(カナ) " value="${dto.u_katalast }">
 				</div>
 			</div>
-
 			<c:choose>
 				<c:when test="${dto.u_gender == 'm'}">
 					<div class="inline fields">
 						<div class="field">
 							<div class="ui radio chekbox">
-								<input type="radio" name="u_gender" id="u_gender" value="m" checked="checked"> <i class="male icon"></i>
+								<input type="radio" name="u_gender" id="u_gender" value="m" checked="checked"> 男
 							</div>
 						</div>
 						<div class="field">
 							<div class="ui radio chekbox">
-								<input type="radio" name="u_gender" id="u_gender" value="f"> <i class="female icon"></i>
+								<input type="radio" name="u_gender" id="u_gender" value="f"> 女
 							</div>
 						</div>
 					</div>
@@ -75,6 +64,21 @@
 					</div>
 				</c:when>
 			</c:choose>
+			<div class="field">
+				<div class="ui left icon input">
+					<i class="envelope icon"></i> <input type="email" name="u_mail" id="u_mail" placeholder="メール  (必須)" value="${dto.u_mail }">
+				</div>
+			</div>
+			<div class="field">
+				<div class="ui left icon input">
+					<i class="lock icon"></i> <input type="password" name="u_password" id="u_password" placeholder="パスワード  (必須)" value="${dto.u_password }">
+				</div>
+			</div>
+			<div class="field">
+				<div class="ui left icon input">
+					<i class="lock icon"></i> <input type="text" name="u_password" id="u_password" placeholder="電話番号" value="${dto.u_password }">
+				</div>
+			</div>
 
 			<c:choose>
 				<c:when test="${dto.u_admin == '1' }">
@@ -107,7 +111,7 @@
 				</c:when>
 			</c:choose>
 			<div>
-				<input type="button" value="修正" class="ui primary button" onclick="javascript:itrans_update()"> <input type="button" class="ui button" value="リスト" onclick="location.href='${path}/itrans/list.do'">
+				<input type="button" value="修正" class="ui primary button" onclick="javascript:iuser_update()"> <input type="button" class="ui button" value="リスト" onclick="location.href='${path}/itrans/list.do'">
 			</div>
 		</div>
 	</form>

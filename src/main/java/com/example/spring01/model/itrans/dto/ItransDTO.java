@@ -9,7 +9,9 @@ public class ItransDTO {
 	private Date t_date;
 	private String t_way;
 	private String t_start;
+	private String t_s_sen;
 	private String t_end;
+	private String t_e_sen;
 	private String t_visit;
 	private String t_goback;
 	private String t_writer;
@@ -31,10 +33,6 @@ public class ItransDTO {
 		this.t_no = t_no;
 	}
 
-	public String getT_way() {
-		return t_way;
-	}
-
 	public Date getT_date() {
 		return t_date;
 	}
@@ -43,12 +41,8 @@ public class ItransDTO {
 		this.t_date = t_date;
 	}
 
-	public String getT_visit() {
-		return t_visit;
-	}
-
-	public void setT_visit(String t_visit) {
-		this.t_visit = t_visit;
+	public String getT_way() {
+		return t_way;
 	}
 
 	public void setT_way(String t_way) {
@@ -63,12 +57,36 @@ public class ItransDTO {
 		this.t_start = t_start;
 	}
 
+	public String getT_s_sen() {
+		return t_s_sen;
+	}
+
+	public void setT_s_sen(String t_s_sen) {
+		this.t_s_sen = t_s_sen;
+	}
+
 	public String getT_end() {
 		return t_end;
 	}
 
 	public void setT_end(String t_end) {
 		this.t_end = t_end;
+	}
+
+	public String getT_e_sen() {
+		return t_e_sen;
+	}
+
+	public void setT_e_sen(String t_e_sen) {
+		this.t_e_sen = t_e_sen;
+	}
+
+	public String getT_visit() {
+		return t_visit;
+	}
+
+	public void setT_visit(String t_visit) {
+		this.t_visit = t_visit;
 	}
 
 	public String getT_goback() {
@@ -98,8 +116,8 @@ public class ItransDTO {
 	@Override
 	public String toString() {
 		return "ItransDTO [u_no=" + u_no + ", t_no=" + t_no + ", t_date=" + t_date + ", t_way=" + t_way + ", t_start="
-				+ t_start + ", t_end=" + t_end + ", t_visit=" + t_visit + ", t_goback=" + t_goback + ", t_writer="
-				+ t_writer + ", t_money=" + t_money + "]";
+				+ t_start + ", t_s_sen=" + t_s_sen + ", t_end=" + t_end + ", t_e_sen=" + t_e_sen + ", t_visit="
+				+ t_visit + ", t_goback=" + t_goback + ", t_writer=" + t_writer + ", t_money=" + t_money + "]";
 	}
 
 }

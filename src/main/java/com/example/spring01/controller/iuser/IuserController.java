@@ -76,10 +76,11 @@ public class IuserController {
 		if (name != null) {
 			session.setAttribute("u_mail", dto.getU_mail());
 			session.setAttribute("u_namefirst", name);
-			mav.setViewName("redirect:itrans/itrans_list");
-			mav.addObject("msg", "success");
+			mav.setViewName("redirect:/itrans/list.do");
+//			mav.addObject("msg", "success");
 		} else {
-			mav.setViewName("iuser/iuser_login");
+//			mav.setViewName("iuser/iuser_login");
+			mav.setViewName("redirect:/iuser/loginCheck.do");
 			mav.addObject("msg", "failure");
 		}
 		return mav;

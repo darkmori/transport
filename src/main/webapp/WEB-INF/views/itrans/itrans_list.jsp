@@ -14,8 +14,8 @@
 			<tr class="text-center" style="font-weight: bolder;">
 				<th class="two wide">日付</th>
 				<th class="two wide">交通手段</th>
-				<th class="one wide">出発地</th>
-				<th class="one wide">到着地</th>
+				<th class="two wide">出発地</th>
+				<th class="two wide">到着地</th>
 				<th>取引先</th>
 				<th class="one wide">片/往</th>
 				<th>摘要</th>
@@ -36,7 +36,7 @@
 					<td>${row.t_writer}</td>
 					<td>¥&nbsp;<fmt:formatNumber value='${row.t_money}' pattern="#,###" /></td>
 					<td><a href='${path}/itrans/modify.do/${row.t_no}'> <i class="edit icon"></i>
-					</a> <a href='${path}/itrans/delete.do/${row.t_no}' onclick="return confirm('本当に削除しますか。');"> <i class="trash alternate icon"></i>
+					</a> <a href='${path}/itrans/delete.do/${row.t_no}' onclick="return confirm('本当に削除しますか。');"> <i class="trash alternate icon" style="color: red;"></i>
 					</a>
 				</tr>
 				<c:set var="sum" value="${sum+row.t_money }" />
@@ -50,7 +50,7 @@
 			</tr>
 		</tfoot>
 	</table>
-	<input type="button" class="ui large primary submit button" onclick="location.href='${path}/itrans/write.do'" value="登録">
+	<input type="button" class="ui large primary submit right floated button" onclick="location.href='${path}/itrans/write.do'" value="登録">
 
 </body>
 </html>
