@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="iadmin">
+
+	<select id="iadmin_list"
+		resultType="com.example.spring01.model.itrans.dto.ItransDTO">
+	</select>
+
+	<insert id="iadmin_insert">
+	</insert>
+
+	<select id="iadmin_modify"
+		resultType="com.example.spring01.model.itrans.dto.ItransDTO">
+	</select>
+
+	<select id="loginCheck" resultType="String">
+		select a_name from iadmin
+		where a_mail = #{a_mail} and a_password = #{a_password}
+	</select>
+	
+
+</mapper>
+
+

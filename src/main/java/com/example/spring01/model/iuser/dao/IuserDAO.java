@@ -2,6 +2,7 @@ package com.example.spring01.model.iuser.dao;
 
 import java.util.List;
 
+import com.example.spring01.model.itrans.dto.ItransDTO;
 import com.example.spring01.model.iuser.dto.IuserDTO;
 
 public interface IuserDAO {
@@ -15,6 +16,8 @@ public interface IuserDAO {
 	public IuserDTO modifyIuser(int u_no);
 
 	public void deleteIuser(int u_no);
+	
+	public List<ItransDTO> detailIuser(int u_no);
 
 	public String loginCheck(IuserDTO dto);
 

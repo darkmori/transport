@@ -13,6 +13,7 @@
 	<table class="ui yellow celled table">
 		<thead>
 			<tr class="text-center" style="font-weight: bolder;">
+				<th class="one wide">番号</th>
 				<th class="two wide">名前(漢字)</th>
 				<th class="two wide">名前(カナ)</th>
 				<th class="one wide">姓別</th>
@@ -25,6 +26,7 @@
 		<tbody>
 			<c:forEach var="row" items="${dto}">
 				<tr>
+					<td><a href='${path}/iuser/detail/${row.u_no}'>${row.u_no}</a></td>
 					<td>${row.u_namefirst}&nbsp;${row.u_namelast}</td>
 					<td>${row.u_katafirst}&nbsp;${row.u_katalast}</td>
 					<td>${row.u_gender}</td>
@@ -32,18 +34,16 @@
 					<td>telnum</td>
 					<td>${row.u_admin}</td>
 					<td><a href='${path}/iuser/modify/${row.u_no}'> <i
-							class="edit icon"></i>
-					</a> <a href='${path}/iuser/delete/${row.u_no}'
+							class="edit icon"></i></a> 
+					<a href='${path}/iuser/delete/${row.u_no}'
 						onclick="return confirm('本当に削除しますか。');"> <i
 							class="trash alternate icon" style="color: red;"></i>
-					</a>
+					</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
-
 	</table>
 	<input type="button" class="ui large primary submit button"
 		onclick="location.href='${path}/iuser/write'" value="登録">
-
 </body>
 </html>

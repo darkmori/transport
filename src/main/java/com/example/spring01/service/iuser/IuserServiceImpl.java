@@ -6,6 +6,8 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
+
+import com.example.spring01.model.itrans.dto.ItransDTO;
 import com.example.spring01.model.iuser.dao.IuserDAO;
 import com.example.spring01.model.iuser.dto.IuserDTO;
 
@@ -49,6 +51,12 @@ public class IuserServiceImpl implements IuserService {
 	public IuserDTO viewIuser(IuserDTO dto) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<ItransDTO> detailIuser(int u_no) {
+		// TODO Auto-generated method stub
+		return iuserDao.detailIuser(u_no);
 	}
 
 }

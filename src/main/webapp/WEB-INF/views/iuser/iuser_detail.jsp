@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -20,7 +21,7 @@
 				<th class="one wide">片/往</th>
 				<th>摘要</th>
 				<th class="two wide" style="text-align: left;">金額</th>
-				<th class="one wide">修正</th>
+				<th>チェック</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -34,10 +35,10 @@
 					<td>${row.t_visit}</td>
 					<td>${row.t_goback}</td>
 					<td>${row.t_writer}</td>
-					<td>¥&nbsp;<fmt:formatNumber value='${row.t_money}' pattern="#,###" /></td>
-					<td><a href='${path}/itrans/modify.do/${row.t_no}'> <i class="edit icon"></i>
-					</a> <a href='${path}/itrans/delete.do/${row.t_no}' onclick="return confirm('本当に削除しますか。');"> <i class="trash alternate icon" style="color: red;"></i>
-					</a></td>
+					<td>¥&nbsp;<fmt:formatNumber value='${row.t_money}'
+							pattern="#,###" /></td>
+					<td><input type="checkbox"> <input type="checkbox">
+						<input type="checkbox"></td>
 				</tr>
 				<c:set var="sum" value="${sum+row.t_money }" />
 			</c:forEach>
@@ -50,7 +51,6 @@
 			</tr>
 		</tfoot>
 	</table>
-	<input type="button" class="ui large primary submit right floated button" onclick="location.href='${path}/itrans/write.do'" value="登録">
 
 </body>
 </html>

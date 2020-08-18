@@ -59,6 +59,15 @@ public class IuserController {
 		return "redirect:/iuser/list";
 	}
 
+	@RequestMapping("detail/{u_no}")
+	public ModelAndView detail(@PathVariable int u_no, ModelAndView mav) {
+		
+		mav.addObject("dto", iuserService.detailIuser(u_no));
+		mav.setViewName("iuser/iuser_detail");
+		
+		return mav;
+	}
+
 	// 로그인 화면
 
 	@RequestMapping("login.do")
@@ -70,7 +79,7 @@ public class IuserController {
 
 	@RequestMapping("loginCheck.do")
 	public ModelAndView loginCheck(@ModelAttribute IuserDTO dto, HttpSession session, ModelAndView mav) {
-		
+
 		String name = iuserService.loginCheck(dto);
 
 		if (name != null) {
@@ -79,9 +88,8 @@ public class IuserController {
 			mav.setViewName("redirect:/itrans/list.do");
 //			mav.addObject("msg", "success");
 		} else {
-//			mav.setViewName("iuser/iuser_login");
 			mav.setViewName("redirect:/iuser/loginCheck.do");
-			mav.addObject("msg", "failure");
+//			mav.addObject("msg", "failure");
 		}
 		return mav;
 	}

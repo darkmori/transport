@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.example.spring01.model.itrans.dto.ItransDTO;
 import com.example.spring01.model.iuser.dto.IuserDTO;
 
 @Repository
@@ -54,6 +55,12 @@ public class IuserDAOImpl implements IuserDAO {
 	@Override
 	public IuserDTO viewIuser(IuserDTO dto) { // TODO Auto-generated
 		return sqlSession.selectOne("iuser.viewIuser", dto);
+	}
+
+	@Override
+	public List<ItransDTO> detailIuser(int u_no) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("iuser.iuser_detail");
 	}
 
 
