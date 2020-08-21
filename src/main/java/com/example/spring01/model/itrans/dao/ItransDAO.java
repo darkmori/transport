@@ -10,9 +10,9 @@ public interface ItransDAO {
 
 	public void insertItrans(ItransDTO dto);
 
-	public void updateItrans(ItransDTO dto);
-	
 	public ItransDTO modifyItrans(int t_no);
+	
+	public void updateItrans(ItransDTO dto);
 
 	public void deleteItrans(int t_no);
 	

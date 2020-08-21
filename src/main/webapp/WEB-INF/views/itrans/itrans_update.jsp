@@ -9,19 +9,16 @@
 <%@include file="../include/head.jsp"%>
 
 <body>
-	<%@include file="../include/main_header.jsp"%>
+	<%@include file="../include/user_header.jsp"%>
+
 	<form method="POST" role="form" class="ui large form container"
 		name="itrans_form" style="width: 770px">
 		<div class="ui segment">
-			<div>
-				<input type="hidden" name="t_no" id="t_no" value="${dto.t_no} ">
-			</div>
 			<div class="two fields">
 				<div class="ui calendar field" id="date_calendar">
 					<div class="ui input left icon">
 						<i class="calendar icon"></i> <input type="text"
-							placeholder="日付 (必須)" id="t_date" name="t_date"
-							value="${dto.t_date} ">
+							placeholder="日付 (必須)" id="t_date" name="t_date" value="${dto.t_date}">
 					</div>
 				</div>
 				<div class="field">
@@ -69,34 +66,21 @@
 			<div class="two fields">
 				<div class="field">
 					<div class="ui left icon input">
-						<i class="location arrow icon"></i> 
-						<input type="text"
-							name="t_e_sen" id="t_e_sen" placeholder="電車の場合、線を入力してください。" value="${dto.t_s_sen }">
+						<i class="location arrow icon"></i> <input type="text"
+							name="t_start" id="t_start" placeholder="出発地 (必須)" value="${dto.t_start} ">
 					</div>
 				</div>
 				<div class="field">
 					<div class="ui left icon input">
-						<i class="location arrow icon"></i> <input type="text"
-							name="t_start" id="t_start" placeholder="出発地  (必須)"
-							value="${dto.t_start} ">
+						<i class="map marker icon"></i><input type="text" name="t_end"
+							id="t_end" placeholder="到着地  (必須)" value="${dto.t_visit} ">
 					</div>
 				</div>
 			</div>
-			<div class="field">
-				<div class="ui left icon input">
-					<i class="map marker icon"></i> <input type="text" name="t_end"
-						id="t_end" placeholder="到着地  (必須)" value="${dto.t_end} ">
-				</div>
-			</div>
-			<div class="field">
-				<div class="ui left icon input">
-					<i class="briefcase icon"></i> <input type="text" name="t_visit"
-						id="t_visit" placeholder="訪問先" value="${dto.t_visit} ">
-				</div>
-			</div>
-			<div class="field">
-				<select name="t_goback" id="t_goback" class="ui selection dropdown">
-					<c:choose>
+			<div class="two fields">
+				<div class="field">
+					<select name="t_goback" id="t_goback" class="ui selection dropdown">
+						<c:choose>
 						<c:when test="${dto.t_goback == '片'}">
 							<option value="片" selected="selected">片</option>
 							<option value="往">往</option>
@@ -106,34 +90,58 @@
 							<option value="往" selected="selected">往</option>
 						</c:when>
 					</c:choose>
-				</select>
-			</div>
-			<div class="field">
-				<div class="ui left icon input">
-					<i class="pencil alternate icon"></i> <input type="text"
-						name="t_writer" id="t_writer" placeholder="摘要  (必須)"
-						value="${dto.t_writer}">
+					</select>
+				</div>
+				<div class="field">
+					<div class="ui left icon input">
+						<i class="briefcase icon"></i> <input type="text" name="t_visit"
+							id="t_visit" placeholder="訪問先" value="${dto.t_writer}">
+					</div>
 				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
-					<i class="yen sign icon"></i> <input type="text" name="t_money"
-						id="t_money" placeholder="金額  (必須)" value="${dto.t_money}">
+					<i class="location train icon"></i> <input type="text"
+						name="t_rosen1" id="t_rosen1" placeholder="電車の場合、路線を入力してください。" value="${dto.t_rosen1}">
 				</div>
 			</div>
-			<div>
+			<div class="field">
+				<div class="ui left icon input">
+					<i class="location train icon"></i> <input type="text"
+						name="t_rosen2" id="t_rosen2" placeholder="電車の場合、路線を入力してください。" value="${dto.t_rosen2}">
+				</div>
+			</div>
+			<div class="field">
+				<div class="ui left icon input">
+					<i class="location train icon"></i> <input type="text"
+						name="t_rosen3" id="t_rosen3" placeholder="電車の場合、路線を入力してください。" value="${dto.t_rosen3}">
+				</div>
+			</div>
+				<div class="field">
+					<div class="ui left icon input">
+						<i class="pencil alternate icon"></i> <input type="text"
+							name="t_memo" id="t_memo" placeholder="備考" value="${dto.t_memo}">
+
+					</div>
+				</div>
+				<div class="field">
+					<div class="ui left icon input">
+						<i class="yen sign icon"></i><input type="text" name="t_money"
+							id="t_money" placeholder="金額  (必須)" value="${dto.t_money}">
+					</div>
+				</div>
+			</div>
+			<div class="field">
 				<input type="button" value="修正" class="ui primary button"
 					onclick="javascript:itrans_update()"> <input type="button"
 					class="ui button" value="キャンセル"
 					onclick="location.href='${path}/itrans/list.do'">
 			</div>
-		</div>
 	</form>
 
 
 	<script>
 		function itrans_update() {
-			var t_no = $("#t_no").val();
 			var t_date = $("#t_date").val();
 			var t_way = $("#t_way").val();
 			var t_start = $("#t_start").val();
@@ -143,21 +151,27 @@
 			var t_writer = $("#t_writer").val();
 			var t_money = $("#t_money").val();
 
+			if (t_date == "") {
+				alert("日付を入力してください");
+				$("#t_date").focus();
+				return;
+			}
 			if (t_way == "") {
 				alert("交通手段を入力してください");
 				$("#t_way").focus();
 				return;
 			}
 			if (t_start == "") {
-				alert("出発区間を入力してください");
+				alert("出発地を入力してください");
 				$("#t_start").focus();
 				return;
 			}
 			if (t_end == "") {
-				alert("到着区間を入力してください");
+				alert("到着地を入力してください");
 				$("#t_end").focus();
 				return;
 			}
+
 			if (t_writer == "") {
 				alert("摘要を入力してください");
 				$("#t_writer").focus();
@@ -171,6 +185,7 @@
 			document.itrans_form.action = "${path}/itrans/update.do";
 			document.itrans_form.submit();
 		}
+
 		$('#date_calendar').calendar(
 				{
 					type : 'date',

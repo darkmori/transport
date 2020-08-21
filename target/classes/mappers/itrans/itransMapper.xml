@@ -13,11 +13,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<insert id="itrans_insert">
 		insert into itrans(
-		t_date,t_way,t_start,t_end,t_visit,t_goback,t_writer,t_money
+		t_date,t_way,t_start,t_end,t_rosen1,t_rosen2,t_rosen3,t_visit,t_goback,t_writer,t_memo,t_money
 		)
 		values
 		(
-		#{t_date},#{t_way},#{t_start},#{t_end},#{t_visit},#{t_goback},#{t_writer},#{t_money}
+		#{t_date},#{t_way},#{t_start},#{t_end},#{t_rosen1},#{t_rosen2},#{t_rosen3},#{t_visit},#{t_goback},#{t_writer},#{t_memo},#{t_money}
 		)
 	</insert>
 
@@ -33,13 +33,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		t_way = #{t_way},
 		t_start = #{t_start},
 		t_end = #{t_end},
+		t_rosen1 = #{t_rosen1},
+		t_rosen2 = #{t_rosen2},
+		t_rosen3 = #{t_rosen3},
 		t_visit = #{t_visit},
-		t_goback =
-		#{t_goback},
+		t_goback = #{t_goback},
 		t_writer = #{t_writer},
+		t_memo = #{t_memo},
 		t_money = #{t_money}
-		where t_no =
-		#{t_no}
+		where t_no = #{t_no}
 	</update>
 
 	<delete id="itrans_delete">

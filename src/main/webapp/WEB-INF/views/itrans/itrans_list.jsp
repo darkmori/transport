@@ -7,7 +7,7 @@
 <%@include file="../include/head.jsp"%>
 <body>
 
-	<%@include file="../include/main_header.jsp"%>
+	<%@include file="../include/user_header.jsp"%>
 
 	<table class="ui yellow celled table">
 		<thead>

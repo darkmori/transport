@@ -8,7 +8,7 @@
 <%@include file="../include/head.jsp"%>
 <body>
 
-	<%@include file="../include/main_header.jsp"%>
+	<%@include file="../include/admin_header.jsp"%>
 
 	<table class="ui yellow celled table">
 		<thead>
@@ -31,7 +31,7 @@
 					<td>${row.u_katafirst}&nbsp;${row.u_katalast}</td>
 					<td>${row.u_gender}</td>
 					<td>${row.u_mail}</td>
-					<td>telnum</td>
+					<td>${row.u_tel }</td>
 					<td>${row.u_admin}</td>
 					<td><a href='${path}/iuser/modify/${row.u_no}'> <i
 							class="edit icon"></i></a> 

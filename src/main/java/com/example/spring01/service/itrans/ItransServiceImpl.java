@@ -24,13 +24,13 @@ public class ItransServiceImpl implements ItransService {
 	}
 
 	@Override
-	public void updateItrans(ItransDTO dto) {
-		itransDao.updateItrans(dto);
+	public ItransDTO modifyItrans(int t_no) {
+		return itransDao.modifyItrans(t_no);
 	}
 
 	@Override
-	public ItransDTO modifyItrans(int t_no) {
-		return itransDao.modifyItrans(t_no);
+	public void updateItrans(ItransDTO dto) {
+		itransDao.updateItrans(dto);
 	}
 
 	@Override

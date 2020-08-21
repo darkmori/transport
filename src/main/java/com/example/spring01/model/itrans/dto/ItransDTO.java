@@ -9,13 +9,18 @@ public class ItransDTO {
 	private Date t_date;
 	private String t_way;
 	private String t_start;
-	private String t_s_sen;
 	private String t_end;
-	private String t_e_sen;
+	private String t_rosen1;
+	private String t_rosen2;
+	private String t_rosen3;
 	private String t_visit;
 	private String t_goback;
 	private String t_writer;
+	private String t_memo;
 	private int t_money;
+	private int t_check1;
+	private int t_check2;
+	private int t_check3;
 
 	public int getU_no() {
 		return u_no;
@@ -57,14 +62,6 @@ public class ItransDTO {
 		this.t_start = t_start;
 	}
 
-	public String getT_s_sen() {
-		return t_s_sen;
-	}
-
-	public void setT_s_sen(String t_s_sen) {
-		this.t_s_sen = t_s_sen;
-	}
-
 	public String getT_end() {
 		return t_end;
 	}
@@ -73,12 +70,28 @@ public class ItransDTO {
 		this.t_end = t_end;
 	}
 
-	public String getT_e_sen() {
-		return t_e_sen;
+	public String getT_rosen1() {
+		return t_rosen1;
 	}
 
-	public void setT_e_sen(String t_e_sen) {
-		this.t_e_sen = t_e_sen;
+	public void setT_rosen1(String t_rosen1) {
+		this.t_rosen1 = t_rosen1;
+	}
+
+	public String getT_rosen2() {
+		return t_rosen2;
+	}
+
+	public void setT_rosen2(String t_rosen2) {
+		this.t_rosen2 = t_rosen2;
+	}
+
+	public String getT_rosen3() {
+		return t_rosen3;
+	}
+
+	public void setT_rosen3(String t_rosen3) {
+		this.t_rosen3 = t_rosen3;
 	}
 
 	public String getT_visit() {
@@ -105,6 +118,14 @@ public class ItransDTO {
 		this.t_writer = t_writer;
 	}
 
+	public String getT_memo() {
+		return t_memo;
+	}
+
+	public void setT_memo(String t_memo) {
+		this.t_memo = t_memo;
+	}
+
 	public int getT_money() {
 		return t_money;
 	}
@@ -113,11 +134,37 @@ public class ItransDTO {
 		this.t_money = t_money;
 	}
 
+	public int getT_check1() {
+		return t_check1;
+	}
+
+	public void setT_check1(int t_check1) {
+		this.t_check1 = t_check1;
+	}
+
+	public int getT_check2() {
+		return t_check2;
+	}
+
+	public void setT_check2(int t_check2) {
+		this.t_check2 = t_check2;
+	}
+
+	public int getT_check3() {
+		return t_check3;
+	}
+
+	public void setT_check3(int t_check3) {
+		this.t_check3 = t_check3;
+	}
+
 	@Override
 	public String toString() {
 		return "ItransDTO [u_no=" + u_no + ", t_no=" + t_no + ", t_date=" + t_date + ", t_way=" + t_way + ", t_start="
-				+ t_start + ", t_s_sen=" + t_s_sen + ", t_end=" + t_end + ", t_e_sen=" + t_e_sen + ", t_visit="
-				+ t_visit + ", t_goback=" + t_goback + ", t_writer=" + t_writer + ", t_money=" + t_money + "]";
+				+ t_start + ", t_end=" + t_end + ", t_rosen1=" + t_rosen1 + ", t_rosen2=" + t_rosen2 + ", t_rosen3="
+				+ t_rosen3 + ", t_visit=" + t_visit + ", t_goback=" + t_goback + ", t_writer=" + t_writer + ", t_memo="
+				+ t_memo + ", t_money=" + t_money + ", t_check1=" + t_check1 + ", t_check2=" + t_check2 + ", t_check3="
+				+ t_check3 + "]";
 	}
 
 }

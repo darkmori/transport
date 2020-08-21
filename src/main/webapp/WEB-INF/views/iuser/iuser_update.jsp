@@ -8,7 +8,7 @@
 <%@include file="../include/head.jsp"%>
 
 <body>
-	<%@include file="../include/main_header.jsp"%>
+	<%@include file="../include/admin_header.jsp"%>
 	<form method="POST" role="form" class="ui large form container" name="itrans_form" style="width: 350px">
 		<div class="ui segment">
 			<div>
@@ -111,14 +111,14 @@
 				</c:when>
 			</c:choose>
 			<div>
-				<input type="button" value="修正" class="ui primary button" onclick="javascript:iuser_update()"> <input type="button" class="ui button" value="リスト" onclick="location.href='${path}/itrans/list.do'">
+				<input type="button" value="修正" class="ui primary button" onclick="javascript:iuser_update()"> <input type="button" class="ui button" value="リスト" onclick="location.href='${path}/iuser/list'">
 			</div>
 		</div>
 	</form>
 
 
 	<script>
-		function itrans_update() {
+		function iuser_update() {
 			var u_no = $("#u_no").val();
 			var u_mail = $("#u_mail").val();
 			var u_password = $("#u_password").val();

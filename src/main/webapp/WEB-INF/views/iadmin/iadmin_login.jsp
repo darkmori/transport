@@ -37,7 +37,7 @@ body>.grid {
 			<h2 class="ui blue image header">
 				<img src="http://placehold.it/40x40" class="image"> 管理者ログイン
 			</h2>
-			<form class="ui large form" id="form1" name="form1" method="post" action="${path}/iadmin/loginCheck.do">
+			<form class="ui large form" id="form1" name="form1" method="post" action="${path}/iadmin/loginCheck">
 				<div class="ui segment">
 					<div class="field">
 						<div class="ui left icon input">
@@ -50,6 +50,7 @@ body>.grid {
 						</div>
 					</div>
 					<button type="submit" class="ui large primary submit button" id="btnLogin">ログイン</button>
+					<a class="ui large green button" href="${path}/iuser/login.do">社員ページ</a>
 				</div>
 			</form>
 		</div>

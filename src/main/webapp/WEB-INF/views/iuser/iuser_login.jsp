@@ -50,7 +50,7 @@ body>.grid {
 						</div>
 					</div>
 					<button type="submit" class="ui large primary submit button" id="btnLogin">ログイン</button>
-					<button type="button" class="ui large primary green button" id="btnAdmin">管理者ページ</button>
+					<a class="ui large green button" href="${path}/iadmin/login">管理者ページ</a>
 				</div>
 			</form>
 		</div>

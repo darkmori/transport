@@ -19,7 +19,7 @@ public class IuserController {
 	@Inject
 	IuserService iuserService;
 
-	@RequestMapping("list")
+	@RequestMapping("list/")
 	public ModelAndView list(ModelAndView mav) {
 
 		mav.addObject("dto", iuserService.listIuser());
@@ -88,7 +88,7 @@ public class IuserController {
 			mav.setViewName("redirect:/itrans/list.do");
 //			mav.addObject("msg", "success");
 		} else {
-			mav.setViewName("redirect:/iuser/loginCheck.do");
+			mav.setViewName("redirect:/iuser/login.do");
 //			mav.addObject("msg", "failure");
 		}
 		return mav;
@@ -100,7 +100,7 @@ public class IuserController {
 	public String logout(HttpSession session) {
 		session.invalidate();
 
-		return "redirect:iuser/iuser_login";
+		return "redirect:/iuser/login.do";
 	}
 
 }

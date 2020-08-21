@@ -59,9 +59,7 @@ public class IuserDAOImpl implements IuserDAO {
 
 	@Override
 	public List<ItransDTO> detailIuser(int u_no) {
-		// TODO Auto-generated method stub
-		return sqlSession.selectList("iuser.iuser_detail");
+		return sqlSession.selectList("iuser.iuser_detail", u_no);
 	}
-
 
 }

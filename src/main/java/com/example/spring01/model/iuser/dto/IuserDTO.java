@@ -9,6 +9,7 @@ public class IuserDTO {
 	private String u_katafirst;
 	private String u_katalast;
 	private String u_gender;
+	private String u_tel;
 	private int u_admin;
 
 	public int getU_no() {
@@ -75,10 +76,18 @@ public class IuserDTO {
 		this.u_gender = u_gender;
 	}
 
+	public String getU_tel() {
+		return u_tel;
+	}
+
+	public void setU_tel(String u_tel) {
+		this.u_tel = u_tel;
+	}
+	
 	public int getU_admin() {
 		return u_admin;
 	}
-
+	
 	public void setU_admin(int u_admin) {
 		this.u_admin = u_admin;
 	}
@@ -87,7 +96,6 @@ public class IuserDTO {
 	public String toString() {
 		return "IuserDTO [u_no=" + u_no + ", u_mail=" + u_mail + ", u_password=" + u_password + ", u_namefirst="
 				+ u_namefirst + ", u_namelast=" + u_namelast + ", u_katafirst=" + u_katafirst + ", u_katalast="
-				+ u_katalast + ", u_gender=" + u_gender + ", u_admin=" + u_admin + "]";
+				+ u_katalast + ", u_gender=" + u_gender + ", u_tel=" + u_tel + ", u_admin=" + u_admin + "]";
 	}
-
 }

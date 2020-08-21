@@ -9,7 +9,7 @@
 <%@include file="../include/head.jsp"%>
 
 <body>
-	<%@include file="../include/main_header.jsp"%>
+	<%@include file="../include/user_header.jsp"%>
 
 	<form method="POST" role="form" class="ui large form container"
 		name="itrans_form" style="width: 770px">
@@ -62,25 +62,25 @@
 			<div class="field">
 				<div class="ui left icon input">
 					<i class="location train icon"></i> <input type="text"
-						name="t_s_sen" id="t_s_sen" placeholder="電車の場合、路線を入力してください。">
+						name="t_rosen1" id="t_rosen1" placeholder="電車の場合、路線を入力してください。">
 				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
 					<i class="location train icon"></i> <input type="text"
-						name="t_e_sen" id="t_e_sen" placeholder="電車の場合、路線を入力してください。">
+						name="t_rosen2" id="t_rosen2" placeholder="電車の場合、路線を入力してください。">
 				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
 					<i class="location train icon"></i> <input type="text"
-						name="t_e_sen" id="t_e_sen" placeholder="電車の場合、路線を入力してください。">
+						name="t_rosen3" id="t_rosen3" placeholder="電車の場合、路線を入力してください。">
 				</div>
 			</div>
 				<div class="field">
 					<div class="ui left icon input">
-						<i class="pencil alternate icon"></i> <input type="text"
-							name="t_writer" id="t_writer" placeholder="備考">
+						<i class="pencil alternate icon"></i> 
+						<input type="text" name="t_memo" id="t_memo" placeholder="備考">
 
 					</div>
 				</div>
@@ -108,7 +108,6 @@
 			var t_end = $("#t_end").val();
 			var t_visit = $("#t_visit").val();
 			var t_goback = $("#t_goback").val();
-			var t_writer = $("#t_writer").val();
 			var t_money = $("#t_money").val();
 
 			if (t_date == "") {
@@ -132,11 +131,6 @@
 				return;
 			}
 
-			if (t_writer == "") {
-				alert("摘要を入力してください");
-				$("#t_writer").focus();
-				return;
-			}
 			if (t_money == "") {
 				alert("金額を入力してください");
 				$("#t_money").focus();
@@ -168,7 +162,6 @@
 							var day = date.getDate();
 							var month = date.getMonth() + 1;
 							return year + '-' + month + '-' + day;
-							/* return year + '/' + month + '/' + day; */
 						}
 					}
 				});

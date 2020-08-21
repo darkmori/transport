@@ -8,7 +8,7 @@
 <%@include file="../include/head.jsp"%>
 <body>
 
-	<%@include file="../include/main_header.jsp"%>
+	<%@include file="../include/admin_header.jsp"%>
 
 	<table class="ui yellow celled table">
 		<thead>
@@ -33,7 +33,7 @@
 					<td>${row.t_start}</td>
 					<td>${row.t_end}</td>
 					<td>${row.t_visit}</td>
-					<td>${row.t_goback}</td>
+					<td>${row.t_goback}</td> 
 					<td>${row.t_writer}</td>
 					<td>¥&nbsp;<fmt:formatNumber value='${row.t_money}'
 							pattern="#,###" /></td>
