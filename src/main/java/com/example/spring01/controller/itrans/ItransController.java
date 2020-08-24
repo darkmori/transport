@@ -4,6 +4,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.spring01.model.itrans.dto.ItransDTO;
@@ -44,7 +45,7 @@ public class ItransController {
 		return mav;
 	}
 
-	@RequestMapping("update.do")
+	@RequestMapping(value = "update.do", method = RequestMethod.POST)
 	public String update(ItransDTO dto) {
 		itransService.updateItrans(dto);
 		return "redirect:/itrans/list.do";

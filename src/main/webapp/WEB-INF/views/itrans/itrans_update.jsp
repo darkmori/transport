@@ -18,6 +18,9 @@
 
 	<form method="POST" role="form" class="ui large form container" name="itrans_form" id="form1">
 		<div class="ui segment">
+			<div>
+				<input type="hidden" name="t_no" id="t_no" value="${dto.t_no} ">
+			</div>
 			<div class="two fields">
 				<div class="ui calendar field" id="date_calendar">
 					<div class="ui input left icon">
@@ -144,6 +147,7 @@
 
 	<script>
 		function itrans_update() {
+			var t_no = $("#t_no").val();
 			var t_date = $("#t_date").val();
 			var t_way = $("#t_way").val();
 			var t_start = $("#t_start").val();
@@ -177,11 +181,6 @@
 				return;
 			}
 
-			if (t_writer == "") {
-				alert("摘要を入力してください");
-				$("#t_writer").focus();
-				return;
-			}
 			if (t_money == "") {
 				alert("金額を入力してください");
 				$("#t_money").focus();

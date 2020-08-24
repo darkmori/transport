@@ -33,8 +33,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		u_namelast = #{u_namelast},
 		u_katafirst = #{u_katafirst},
 		u_katalast = #{u_katalast},
-		u_gender =
-		#{u_gender},
+		u_gender = #{u_gender},
 		u_admin = #{u_admin}
 		where u_no = #{u_no}
 	</update>
