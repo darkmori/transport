@@ -8,7 +8,7 @@
 <%@include file="../include/head.jsp"%>
 
 <body>
-	<%@include file="../include/main_header.jsp"%>
+	<%@include file="../include/admin_header.jsp"%>
 
 	<form method="POST" role="form" class="ui large form container" name="itrans_form" style="width: 350px">
 		<div class="ui segment">

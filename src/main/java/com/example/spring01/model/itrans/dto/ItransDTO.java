@@ -15,7 +15,6 @@ public class ItransDTO {
 	private String t_rosen3;
 	private String t_visit;
 	private String t_goback;
-	private String t_writer;
 	private String t_memo;
 	private int t_money;
 	private int t_check1;
@@ -110,14 +109,6 @@ public class ItransDTO {
 		this.t_goback = t_goback;
 	}
 
-	public String getT_writer() {
-		return t_writer;
-	}
-
-	public void setT_writer(String t_writer) {
-		this.t_writer = t_writer;
-	}
-
 	public String getT_memo() {
 		return t_memo;
 	}
@@ -162,9 +153,8 @@ public class ItransDTO {
 	public String toString() {
 		return "ItransDTO [u_no=" + u_no + ", t_no=" + t_no + ", t_date=" + t_date + ", t_way=" + t_way + ", t_start="
 				+ t_start + ", t_end=" + t_end + ", t_rosen1=" + t_rosen1 + ", t_rosen2=" + t_rosen2 + ", t_rosen3="
-				+ t_rosen3 + ", t_visit=" + t_visit + ", t_goback=" + t_goback + ", t_writer=" + t_writer + ", t_memo="
-				+ t_memo + ", t_money=" + t_money + ", t_check1=" + t_check1 + ", t_check2=" + t_check2 + ", t_check3="
-				+ t_check3 + "]";
+				+ t_rosen3 + ", t_visit=" + t_visit + ", t_goback=" + t_goback + ", t_memo=" + t_memo + ", t_money="
+				+ t_money + ", t_check1=" + t_check1 + ", t_check2=" + t_check2 + ", t_check3=" + t_check3 + "]";
 	}
 
 }

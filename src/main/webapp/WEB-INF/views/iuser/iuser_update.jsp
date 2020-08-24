@@ -16,22 +16,26 @@
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
-					<i class="address book icon"></i><input type="text" name="u_namefirst" id="u_namefirst" placeholder="苗字(漢字)" value="${dto.u_namefirst }">
+					<i class="address book icon"></i>
+					<input type="text" name="u_namefirst" id="u_namefirst" placeholder="苗字(漢字)" value="${dto.u_namefirst }">
 				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
-					<i class="address book outline icon"></i> <input type="text" name="u_namelast" id="u_namelast" placeholder="名前(漢字)" value="${dto.u_namelast }">
+					<i class="address book outline icon"></i>
+					<input type="text" name="u_namelast" id="u_namelast" placeholder="名前(漢字)" value="${dto.u_namelast }">
 				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
-					<i class="address card icon"></i> <input type="text" name="u_katafirst" id="u_katafirst" placeholder="苗字(カナ)" value="${dto.u_katafirst }">
+					<i class="address card icon"></i>
+					<input type="text" name="u_katafirst" id="u_katafirst" placeholder="苗字(カナ)" value="${dto.u_katafirst }">
 				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
-					<i class="address card outline icon"></i> <input type="text" name="u_katalast" id="u_katalast" placeholder="名前(カナ) " value="${dto.u_katalast }">
+					<i class="address card outline icon"></i>
+					<input type="text" name="u_katalast" id="u_katalast" placeholder="名前(カナ) " value="${dto.u_katalast }">
 				</div>
 			</div>
 			<c:choose>
@@ -39,12 +43,14 @@
 					<div class="inline fields">
 						<div class="field">
 							<div class="ui radio chekbox">
-								<input type="radio" name="u_gender" id="u_gender" value="m" checked="checked"> 男
+								<input type="radio" name="u_gender" id="u_gender" value="m" checked="checked">
+								男
 							</div>
 						</div>
 						<div class="field">
 							<div class="ui radio chekbox">
-								<input type="radio" name="u_gender" id="u_gender" value="f"> 女
+								<input type="radio" name="u_gender" id="u_gender" value="f">
+								女
 							</div>
 						</div>
 					</div>
@@ -53,12 +59,14 @@
 					<div class="inline fields">
 						<div class="field">
 							<div class="ui radio chekbox">
-								<input type="radio" name="u_gender" id="u_gender" value="m"> <i class="male icon"></i>
+								<input type="radio" name="u_gender" id="u_gender" value="m">
+								<i class="male icon"></i>
 							</div>
 						</div>
 						<div class="field">
 							<div class="ui radio chekbox">
-								<input type="radio" name="u_gender" id="u_gender" value="f" checked="checked"> <i class="female icon"></i>
+								<input type="radio" name="u_gender" id="u_gender" value="f" checked="checked">
+								<i class="female icon"></i>
 							</div>
 						</div>
 					</div>
@@ -66,17 +74,20 @@
 			</c:choose>
 			<div class="field">
 				<div class="ui left icon input">
-					<i class="envelope icon"></i> <input type="email" name="u_mail" id="u_mail" placeholder="メール  (必須)" value="${dto.u_mail }">
+					<i class="envelope icon"></i>
+					<input type="email" name="u_mail" id="u_mail" placeholder="メール  (必須)" value="${dto.u_mail }">
 				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
-					<i class="lock icon"></i> <input type="password" name="u_password" id="u_password" placeholder="パスワード  (必須)" value="${dto.u_password }">
+					<i class="lock icon"></i>
+					<input type="password" name="u_password" id="u_password" placeholder="パスワード  (必須)" value="${dto.u_password }">
 				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
-					<i class="lock icon"></i> <input type="text" name="u_password" id="u_password" placeholder="電話番号" value="${dto.u_password }">
+					<i class="lock icon"></i>
+					<input type="text" name="u_password" id="u_password" placeholder="電話番号" value="${dto.u_password }">
 				</div>
 			</div>
 
@@ -85,12 +96,14 @@
 					<div class="inline fields">
 						<div class="field">
 							<div class="ui radio chekbox">
-								<input type="radio" name="u_admin" id="u_admin" value="1" checked="checked">管理者
+								<input type="radio" name="u_admin" id="u_admin" value="1" checked="checked">
+								管理者
 							</div>
 						</div>
 						<div class="field">
 							<div class="ui radio chekbox">
-								<input type="radio" name="u_admin" id="u_admin" value="2">一般
+								<input type="radio" name="u_admin" id="u_admin" value="2">
+								一般
 							</div>
 						</div>
 					</div>
@@ -99,19 +112,22 @@
 					<div class="inline fields">
 						<div class="field">
 							<div class="ui radio chekbox">
-								<input type="radio" name="u_admin" id="u_admin" value="1">管理者
+								<input type="radio" name="u_admin" id="u_admin" value="1">
+								管理者
 							</div>
 						</div>
 						<div class="field">
 							<div class="ui radio chekbox">
-								<input type="radio" name="u_admin" id="u_admin" value="2" checked="checked">一般
+								<input type="radio" name="u_admin" id="u_admin" value="2" checked="checked">
+								一般
 							</div>
 						</div>
 					</div>
 				</c:when>
 			</c:choose>
 			<div>
-				<input type="button" value="修正" class="ui primary button" onclick="javascript:iuser_update()"> <input type="button" class="ui button" value="リスト" onclick="location.href='${path}/iuser/list'">
+				<input type="button" value="修正" class="ui primary button" onclick="javascript:iuser_update()">
+				<input type="button" class="ui button" value="リスト" onclick="location.href='${path}/iuser/list'">
 			</div>
 		</div>
 	</form>

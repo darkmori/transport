@@ -41,12 +41,14 @@ body>.grid {
 				<div class="ui segment">
 					<div class="field">
 						<div class="ui left icon input">
-							<i class="user icon"></i> <input type="email" name="a_mail" id="a_mail" placeholder="E-mail address">
+							<i class="user icon"></i>
+							<input type="email" name="a_mail" id="a_mail" placeholder="E-mail address">
 						</div>
 					</div>
 					<div class="field">
 						<div class="ui left icon input">
-							<i class="lock icon"></i> <input type="password" name="a_password" id="a_password" placeholder="Password">
+							<i class="lock icon"></i>
+							<input type="password" name="a_password" id="a_password" placeholder="Password">
 						</div>
 					</div>
 					<button type="submit" class="ui large primary submit button" id="btnLogin">ログイン</button>

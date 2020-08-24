@@ -19,7 +19,7 @@ public class IuserController {
 	@Inject
 	IuserService iuserService;
 
-	@RequestMapping("list/")
+	@RequestMapping("list")
 	public ModelAndView list(ModelAndView mav) {
 
 		mav.addObject("dto", iuserService.listIuser());

@@ -33,11 +33,16 @@
 					<td>${row.t_end}</td>
 					<td>${row.t_visit}</td>
 					<td>${row.t_goback}</td>
-					<td>${row.t_writer}</td>
-					<td>¥&nbsp;<fmt:formatNumber value='${row.t_money}' pattern="#,###" /></td>
-					<td><a href='${path}/itrans/modify.do/${row.t_no}'> <i class="edit icon"></i>
-					</a> <a href='${path}/itrans/delete.do/${row.t_no}' onclick="return confirm('本当に削除しますか。');"> <i class="trash alternate icon" style="color: red;"></i>
-					</a></td>
+					<td>${row.t_memo}</td>
+					<td>
+						¥&nbsp;
+						<fmt:formatNumber value='${row.t_money}' pattern="#,###" />
+					</td>
+					<td>
+						<a href='${path}/itrans/modify.do/${row.t_no}'> <i class="edit icon"></i>
+						</a> <a href='${path}/itrans/delete.do/${row.t_no}' onclick="return confirm('本当に削除しますか。');"> <i class="trash alternate icon" style="color: red;"></i>
+						</a>
+					</td>
 				</tr>
 				<c:set var="sum" value="${sum+row.t_money }" />
 			</c:forEach>
@@ -46,7 +51,10 @@
 			<tr style="">
 				<td colspan="6" style="visibility: hidden"></td>
 				<td>合計</td>
-				<td>¥&nbsp;<fmt:formatNumber value='${sum}' pattern="#,###" /></td>
+				<td>
+					¥&nbsp;
+					<fmt:formatNumber value='${sum}' pattern="#,###" />
+				</td>
 			</tr>
 		</tfoot>
 	</table>

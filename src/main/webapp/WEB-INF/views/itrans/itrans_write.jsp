@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -7,18 +6,23 @@
 <html>
 
 <%@include file="../include/head.jsp"%>
+<style>
+#form1{
+	margin-top: 80px;
+	width: 770px;
+}
+</style>
 
 <body>
 	<%@include file="../include/user_header.jsp"%>
 
-	<form method="POST" role="form" class="ui large form container"
-		name="itrans_form" style="width: 770px">
+	<form method="POST" role="form" class="ui large form container" name="itrans_form" id="form1">
 		<div class="ui segment">
 			<div class="two fields">
 				<div class="ui calendar field" id="date_calendar">
 					<div class="ui input left icon">
-						<i class="calendar icon"></i> <input type="text"
-							placeholder="日付 (必須)" id="t_date" name="t_date">
+						<i class="calendar icon"></i>
+						<input type="text" placeholder="日付 (必須)" id="t_date" name="t_date">
 					</div>
 				</div>
 				<div class="field">
@@ -34,14 +38,14 @@
 			<div class="two fields">
 				<div class="field">
 					<div class="ui left icon input">
-						<i class="location arrow icon"></i> <input type="text"
-							name="t_start" id="t_start" placeholder="出発地  (必須)">
+						<i class="location arrow icon"></i>
+						<input type="text" name="t_start" id="t_start" placeholder="出発地  (必須)">
 					</div>
 				</div>
 				<div class="field">
 					<div class="ui left icon input">
-						<i class="map marker icon"></i><input type="text" name="t_end"
-							id="t_end" placeholder="到着地  (必須)">
+						<i class="map marker icon"></i>
+						<input type="text" name="t_end" id="t_end" placeholder="到着地  (必須)">
 					</div>
 				</div>
 			</div>
@@ -54,49 +58,47 @@
 				</div>
 				<div class="field">
 					<div class="ui left icon input">
-						<i class="briefcase icon"></i> <input type="text" name="t_visit"
-							id="t_visit" placeholder="訪問先">
+						<i class="briefcase icon"></i>
+						<input type="text" name="t_visit" id="t_visit" placeholder="訪問先">
 					</div>
 				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
-					<i class="location train icon"></i> <input type="text"
-						name="t_rosen1" id="t_rosen1" placeholder="電車の場合、路線を入力してください。">
+					<i class="location train icon"></i>
+					<input type="text" name="t_rosen1" id="t_rosen1" placeholder="電車の場合、路線を入力してください。">
 				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
-					<i class="location train icon"></i> <input type="text"
-						name="t_rosen2" id="t_rosen2" placeholder="電車の場合、路線を入力してください。">
+					<i class="location train icon"></i>
+					<input type="text" name="t_rosen2" id="t_rosen2" placeholder="電車の場合、路線を入力してください。">
 				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
-					<i class="location train icon"></i> <input type="text"
-						name="t_rosen3" id="t_rosen3" placeholder="電車の場合、路線を入力してください。">
+					<i class="location train icon"></i>
+					<input type="text" name="t_rosen3" id="t_rosen3" placeholder="電車の場合、路線を入力してください。">
 				</div>
 			</div>
-				<div class="field">
-					<div class="ui left icon input">
-						<i class="pencil alternate icon"></i> 
-						<input type="text" name="t_memo" id="t_memo" placeholder="備考">
+			<div class="field">
+				<div class="ui left icon input">
+					<i class="pencil alternate icon"></i>
+					<input type="text" name="t_memo" id="t_memo" placeholder="備考">
 
-					</div>
-				</div>
-				<div class="field">
-					<div class="ui left icon input">
-						<i class="yen sign icon"></i><input type="text" name="t_money"
-							id="t_money" placeholder="金額  (必須)">
-					</div>
 				</div>
 			</div>
 			<div class="field">
-				<input type="button" value="登録" class="ui primary button "
-					onclick="javascript:itrans_write()"> <input type="button"
-					value="キャンセル" class="ui button"
-					onclick="location.href='${path}/itrans/list.do'">
+				<div class="ui left icon input">
+					<i class="yen sign icon"></i>
+					<input type="text" name="t_money" id="t_money" placeholder="金額  (必須)">
+				</div>
 			</div>
+		</div>
+		<div class="field">
+			<input type="button" value="登録" class="ui primary button " onclick="javascript:itrans_write()">
+			<input type="button" value="キャンセル" class="ui button" onclick="location.href='${path}/itrans/list.do'">
+		</div>
 	</form>
 
 
@@ -107,6 +109,10 @@
 			var t_start = $("#t_start").val();
 			var t_end = $("#t_end").val();
 			var t_visit = $("#t_visit").val();
+			var t_rosen1 = $("#t_rosen1").val();
+			var t_rosen2 = $("#t_rosen2").val();
+			var t_rosen3 = $("#t_rosen3").val();
+			var t_memo = $("#t_memo").val();
 			var t_goback = $("#t_goback").val();
 			var t_money = $("#t_money").val();
 
