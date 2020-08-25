@@ -98,4 +98,6 @@ public class IuserDTO {
 				+ u_namefirst + ", u_namelast=" + u_namelast + ", u_katafirst=" + u_katafirst + ", u_katalast="
 				+ u_katalast + ", u_gender=" + u_gender + ", u_tel=" + u_tel + ", u_admin=" + u_admin + "]";
 	}
+
+	
 }

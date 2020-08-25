@@ -6,7 +6,7 @@ import com.example.spring01.model.itrans.dto.ItransDTO;
 
 public interface ItransDAO {
 
-	public List<ItransDTO> listItrans();
+	public List<ItransDTO> listItrans(int u_no);
 
 	public void insertItrans(ItransDTO dto);
 

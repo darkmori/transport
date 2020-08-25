@@ -1,10 +1,13 @@
 package com.example.spring01.controller.itrans;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.spring01.model.itrans.dto.ItransDTO;
@@ -18,9 +21,9 @@ public class ItransController {
 	ItransService itransService;
 
 	@RequestMapping("list.do")
-	public ModelAndView list(ModelAndView mav) {
-
-		mav.addObject("dto", itransService.listItrans());
+	public ModelAndView list(@RequestParam("u_no") int u_no, ModelAndView mav) {
+		
+		mav.addObject("dto", itransService.listItrans(u_no));
 		mav.setViewName("itrans/itrans_list");
 
 		return mav;

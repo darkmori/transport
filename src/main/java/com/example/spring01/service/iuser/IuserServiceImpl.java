@@ -43,10 +43,15 @@ public class IuserServiceImpl implements IuserService {
 	}
 
 	@Override
-	public String loginCheck(IuserDTO dto) {
-		return iuserDao.loginCheck(dto);
+	public Integer loginCheck(int u_no) {
+		return iuserDao.loginCheck(u_no);
 	}
 
+	@Override
+	public IuserDTO loginCheck(IuserDTO dto) {
+		return iuserDao.loginCheck(dto);
+	}
+	
 	@Override
 	public IuserDTO viewIuser(IuserDTO dto) {
 		// TODO Auto-generated method stub
@@ -58,5 +63,7 @@ public class IuserServiceImpl implements IuserService {
 		// TODO Auto-generated method stub
 		return iuserDao.detailIuser(u_no);
 	}
+
+	
 
 }

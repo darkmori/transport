@@ -14,8 +14,8 @@ public class ItransServiceImpl implements ItransService {
 	ItransDAO itransDao;
 
 	@Override
-	public List<ItransDTO> listItrans() {
-		return itransDao.listItrans();
+	public List<ItransDTO> listItrans(int u_no) {
+		return itransDao.listItrans(u_no);
 	}
 
 	@Override

@@ -48,10 +48,16 @@ public class IuserDAOImpl implements IuserDAO {
 	}
 
 	@Override
-	public String loginCheck(IuserDTO dto) {
-		return sqlSession.selectOne("iuser.loginCheck", dto);
+	public Integer loginCheck(int u_no) {
+		return sqlSession.selectOne("iuser.loginCheck", u_no);
 	}
 
+
+	@Override
+	public IuserDTO loginCheck(IuserDTO dto) {
+		return sqlSession.selectOne("iuser.loginCheck", dto);
+	}
+	
 	@Override
 	public IuserDTO viewIuser(IuserDTO dto) { // TODO Auto-generated
 		return sqlSession.selectOne("iuser.viewIuser", dto);
@@ -61,5 +67,6 @@ public class IuserDAOImpl implements IuserDAO {
 	public List<ItransDTO> detailIuser(int u_no) {
 		return sqlSession.selectList("iuser.iuser_detail", u_no);
 	}
+
 
 }

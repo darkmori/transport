@@ -15,16 +15,16 @@ public class ItransDAOImpl implements ItransDAO {
 	SqlSession sqlSession;
 
 	@Override
-	public List<ItransDTO> listItrans() {
+	public List<ItransDTO> listItrans(int u_no) {
 		// TODO Auto-generated method stub
-		return sqlSession.selectList("itrans.itrans_list");
+		return sqlSession.selectList("itrans.itrans_list", u_no);
 	}
 
 	@Override
 	public void insertItrans(ItransDTO dto) {
 		sqlSession.insert("itrans.itrans_insert", dto);
 	}
-	
+
 	@Override
 	public ItransDTO modifyItrans(int t_no) {
 		return sqlSession.selectOne("itrans.itrans_modify", t_no);

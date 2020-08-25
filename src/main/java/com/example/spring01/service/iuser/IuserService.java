@@ -19,7 +19,9 @@ public interface IuserService {
 
 	public List<ItransDTO> detailIuser(int u_no);
 
-	public String loginCheck(IuserDTO dto);
+	public Integer loginCheck(int u_no);
+	
+	public IuserDTO loginCheck(IuserDTO dto);
 
 	public IuserDTO viewIuser(IuserDTO dto);
 

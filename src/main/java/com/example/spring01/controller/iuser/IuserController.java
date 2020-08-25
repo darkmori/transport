@@ -61,10 +61,10 @@ public class IuserController {
 
 	@RequestMapping("detail/{u_no}")
 	public ModelAndView detail(@PathVariable int u_no, ModelAndView mav) {
-		
+
 		mav.addObject("dto", iuserService.detailIuser(u_no));
 		mav.setViewName("iuser/iuser_detail");
-		
+
 		return mav;
 	}
 
@@ -80,11 +80,13 @@ public class IuserController {
 	@RequestMapping("loginCheck.do")
 	public ModelAndView loginCheck(@ModelAttribute IuserDTO dto, HttpSession session, ModelAndView mav) {
 
-		String name = iuserService.loginCheck(dto);
-
-		if (name != null) {
+		IuserDTO idto = iuserService.loginCheck(dto);
+		int userno = idto.getU_no();
+		if (userno != 0) {
 			session.setAttribute("u_mail", dto.getU_mail());
-			session.setAttribute("u_namefirst", name);
+			System.out.println(session.getAttribute("u_mail"));
+			//session.setAttribute("u_no", userno);
+			mav.addObject("u_no", userno);
 			mav.setViewName("redirect:/itrans/list.do");
 //			mav.addObject("msg", "success");
 		} else {

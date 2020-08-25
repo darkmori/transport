@@ -8,7 +8,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="itrans_list"
 		resultType="com.example.spring01.model.itrans.dto.ItransDTO">
-		select * from itrans order by t_date asc
+		select * from itrans where u_no = #{u_no} order by t_date asc
 	</select>
 
 	<insert id="itrans_insert">

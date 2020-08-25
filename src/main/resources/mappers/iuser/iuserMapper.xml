@@ -47,8 +47,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from itrans where u_no = #{u_no} order by t_date asc
 	</select>
 
-	<select id="loginCheck" resultType="String">
-		select u_namefirst from iuser
+	<select id="loginCheck" resultType="com.example.spring01.model.iuser.dto.IuserDTO">
+		select * from iuser
 		where u_mail = #{u_mail} and u_password = #{u_password}
 	</select>
 

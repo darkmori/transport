@@ -4,6 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
+<title>会員管理</title>
 <%@include file="../include/head.jsp"%>
 <body>
 
