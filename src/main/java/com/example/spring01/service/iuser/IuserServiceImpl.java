@@ -42,11 +42,10 @@ public class IuserServiceImpl implements IuserService {
 		iuserDao.deleteIuser(u_no);
 	}
 
-	@Override
-	public Integer loginCheck(int u_no) {
-		return iuserDao.loginCheck(u_no);
-	}
-
+	/*
+	 * @Override public Integer loginCheck(int u_no) { return
+	 * iuserDao.loginCheck(u_no); }
+	 */
 	@Override
 	public IuserDTO loginCheck(IuserDTO dto) {
 		return iuserDao.loginCheck(dto);

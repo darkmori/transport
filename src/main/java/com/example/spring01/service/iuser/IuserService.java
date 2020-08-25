@@ -19,7 +19,7 @@ public interface IuserService {
 
 	public List<ItransDTO> detailIuser(int u_no);
 
-	public Integer loginCheck(int u_no);
+//	public Integer loginCheck(int u_no);
 	
 	public IuserDTO loginCheck(IuserDTO dto);
 

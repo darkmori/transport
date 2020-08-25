@@ -47,10 +47,10 @@ public class IuserDAOImpl implements IuserDAO {
 		sqlSession.delete("iuser.iuser_delete", u_no);
 	}
 
-	@Override
-	public Integer loginCheck(int u_no) {
-		return sqlSession.selectOne("iuser.loginCheck", u_no);
-	}
+//	@Override
+//	public Integer loginCheck(int u_no) {
+//		return sqlSession.selectOne("iuser.loginCheck", u_no);
+//	}
 
 
 	@Override
