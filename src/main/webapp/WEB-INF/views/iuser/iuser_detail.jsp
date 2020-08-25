@@ -34,7 +34,7 @@
 					<td>${row.t_end}</td>
 					<td>${row.t_visit}</td>
 					<td>${row.t_goback}</td> 
-					<td>${row.t_writer}</td>
+					<td>${row.t_memo}</td>
 					<td>¥&nbsp;<fmt:formatNumber value='${row.t_money}'
 							pattern="#,###" /></td>
 					<td><input type="checkbox"> <input type="checkbox">
