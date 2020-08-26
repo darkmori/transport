@@ -22,7 +22,7 @@ public class ItransController {
 
 	@RequestMapping("list.do")
 	public ModelAndView list(@RequestParam("u_no") int u_no, ModelAndView mav) {
-		
+
 		mav.addObject("dto", itransService.listItrans(u_no));
 		mav.setViewName("itrans/itrans_list");
 
@@ -30,8 +30,11 @@ public class ItransController {
 	}
 
 	@RequestMapping("write.do")
-	public String write() {
-		return "itrans/itrans_write";
+	public ModelAndView write(int u_no, ModelAndView mav) {
+		mav.setViewName("itrans/itrans_write");
+		mav.addObject("dto", itransService.writeItrans(u_no));
+
+		return mav;
 	}
 
 	@RequestMapping("insert.do")
@@ -51,7 +54,7 @@ public class ItransController {
 	@RequestMapping(value = "update.do", method = RequestMethod.POST)
 	public String update(ItransDTO dto) {
 		itransService.updateItrans(dto);
-		return "redirect:/itrans/list.do";
+		return "redirect:/itrans/list.do?u_no={u_no}";
 	}
 
 	@RequestMapping("delete.do/{t_no}")

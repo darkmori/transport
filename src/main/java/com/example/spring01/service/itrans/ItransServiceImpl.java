@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 import com.example.spring01.model.itrans.dao.ItransDAO;
 import com.example.spring01.model.itrans.dto.ItransDTO;
+import com.example.spring01.model.iuser.dto.IuserDTO;
 
 @Service
 public class ItransServiceImpl implements ItransService {
@@ -16,6 +17,12 @@ public class ItransServiceImpl implements ItransService {
 	@Override
 	public List<ItransDTO> listItrans(int u_no) {
 		return itransDao.listItrans(u_no);
+	}
+
+	@Override
+	public IuserDTO writeItrans(int u_no) {
+		// TODO Auto-generated method stub
+		return itransDao.writeItrans(u_no);
 	}
 
 	@Override

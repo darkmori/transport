@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.example.spring01.model.itrans.dto.ItransDTO;
+import com.example.spring01.model.iuser.dto.IuserDTO;
 
 //mapper랑 연결
 @Repository
@@ -18,6 +19,12 @@ public class ItransDAOImpl implements ItransDAO {
 	public List<ItransDTO> listItrans(int u_no) {
 		// TODO Auto-generated method stub
 		return sqlSession.selectList("itrans.itrans_list", u_no);
+	}
+	
+	@Override
+	public IuserDTO writeItrans(int u_no) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("itrans.itrans_write",u_no);
 	}
 
 	@Override

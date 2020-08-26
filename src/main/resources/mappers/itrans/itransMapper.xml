@@ -10,6 +10,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		resultType="com.example.spring01.model.itrans.dto.ItransDTO">
 		select * from itrans where u_no = #{u_no} order by t_date asc
 	</select>
+	
+	<select id="itrans_write"
+		resultType="com.example.spring01.model.iuser.dto.IuserDTO">
+		select * from iuser
+		where u_no = #{u_no}
+	</select>
 
 	<insert id="itrans_insert">
 		insert into itrans(

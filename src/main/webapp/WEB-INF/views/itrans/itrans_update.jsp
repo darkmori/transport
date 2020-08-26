@@ -8,15 +8,16 @@
 <%@include file="../include/head.jsp"%>
 
 <style>
-	#form1{
-		padding-top: 80px;
-		width: 770px;
-	}
+#form1 {
+	padding-top: 80px;
+	width: 770px;
+}
 </style>
 <body>
 	<%@include file="../include/user_header.jsp"%>
 
 	<form method="POST" role="form" class="ui large form container" name="itrans_form" id="form1">
+		<input type="hidden" name="u_no" id="u_no" value="${dto.u_no}">
 		<div class="ui segment">
 			<div>
 				<input type="hidden" name="t_no" id="t_no" value="${dto.t_no} ">
@@ -147,6 +148,7 @@
 
 	<script>
 		function itrans_update() {
+			var u_no = $("#u_no").val();
 			var t_no = $("#t_no").val();
 			var t_date = $("#t_date").val();
 			var t_way = $("#t_way").val();

@@ -7,7 +7,7 @@
 
 <%@include file="../include/head.jsp"%>
 <style>
-#form1{
+#form1 {
 	margin-top: 80px;
 	width: 770px;
 }
@@ -17,6 +17,7 @@
 	<%@include file="../include/user_header.jsp"%>
 
 	<form method="POST" role="form" class="ui large form container" name="itrans_form" id="form1">
+		<input type="hidden" id="u_no" name="u_no" value="#{dto.u_no}">
 		<div class="ui segment">
 			<div class="two fields">
 				<div class="ui calendar field" id="date_calendar">
@@ -104,6 +105,7 @@
 
 	<script>
 		function itrans_write() {
+			var u_no = $("#u_no").val();
 			var t_date = $("#t_date").val();
 			var t_way = $("#t_way").val();
 			var t_start = $("#t_start").val();
