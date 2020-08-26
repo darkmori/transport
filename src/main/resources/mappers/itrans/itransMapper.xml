@@ -8,22 +8,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="itrans_list"
 		resultType="com.example.spring01.model.itrans.dto.ItransDTO">
-		select * from itrans where u_no = #{u_no} order by t_date asc
+		select * from itrans where u_no = #{u_no} order by t_date
+		asc
 	</select>
-	
+
 	<select id="itrans_write"
-		resultType="com.example.spring01.model.iuser.dto.IuserDTO">
-		select * from iuser
-		where u_no = #{u_no}
+		resultType="com.example.spring01.model.itrans.dto.ItransDTO">
+		select u_no from iuser
+		where u_mail = #{u_mail}
 	</select>
 
 	<insert id="itrans_insert">
 		insert into itrans(
-		t_date,t_way,t_start,t_end,t_rosen1,t_rosen2,t_rosen3,t_visit,t_goback,t_memo,t_money
+		u_no,t_date,t_way,t_start,t_end,t_rosen1,t_rosen2,t_rosen3,t_visit,t_goback,t_memo,t_money
 		)
 		values
 		(
-		#{t_date},#{t_way},#{t_start},#{t_end},#{t_rosen1},#{t_rosen2},#{t_rosen3},#{t_visit},#{t_goback},#{t_memo},#{t_money}
+		#{u_no},#{t_date},#{t_way},#{t_start},#{t_end},#{t_rosen1},#{t_rosen2},#{t_rosen3},#{t_visit},#{t_goback},#{t_memo},#{t_money}
 		)
 	</insert>
 

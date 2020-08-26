@@ -20,7 +20,7 @@ public class ItransServiceImpl implements ItransService {
 	}
 
 	@Override
-	public IuserDTO writeItrans(int u_no) {
+	public ItransDTO writeItrans(int u_no) {
 		// TODO Auto-generated method stub
 		return itransDao.writeItrans(u_no);
 	}
@@ -44,4 +44,5 @@ public class ItransServiceImpl implements ItransService {
 	public void deleteItrans(int t_no) {
 		itransDao.deleteItrans(t_no);
 	}
+
 }

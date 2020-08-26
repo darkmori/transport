@@ -17,7 +17,7 @@
 	<%@include file="../include/user_header.jsp"%>
 
 	<form method="POST" role="form" class="ui large form container" name="itrans_form" id="form1">
-		<input type="hidden" id="u_no" name="u_no" value="#{dto.u_no}">
+		<input type="hidden" id="u_no" name="u_no" value="${u_no}">
 		<div class="ui segment">
 			<div class="two fields">
 				<div class="ui calendar field" id="date_calendar">
@@ -98,7 +98,7 @@
 		</div>
 		<div class="field">
 			<input type="button" value="登録" class="ui primary button " onclick="javascript:itrans_write()">
-			<input type="button" value="キャンセル" class="ui button" onclick="location.href='${path}/itrans/list.do'">
+			<input type="button" value="キャンセル" class="ui button" onclick="location.href='${path}/itrans/list.do/${u_no}'">
 		</div>
 	</form>
 

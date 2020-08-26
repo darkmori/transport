@@ -17,8 +17,10 @@
 	<%@include file="../include/user_header.jsp"%>
 
 	<form method="POST" role="form" class="ui large form container" name="itrans_form" id="form1">
-		<input type="hidden" name="u_no" id="u_no" value="${dto.u_no}">
 		<div class="ui segment">
+			<div>
+				<input type="hidden" name="u_no" id="u_no" value="${dto.u_no}">
+			</div>
 			<div>
 				<input type="hidden" name="t_no" id="t_no" value="${dto.t_no} ">
 			</div>
@@ -141,7 +143,7 @@
 		</div>
 		<div class="field">
 			<input type="button" value="修正" class="ui primary button" onclick="javascript:itrans_update()">
-			<input type="button" class="ui button" value="キャンセル" onclick="location.href='${path}/itrans/list.do'">
+			<input type="button" class="ui button" value="キャンセル" onclick="location.href='${path}/itrans/list.do/${dto.u_no}'">
 		</div>
 	</form>
 

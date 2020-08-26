@@ -9,7 +9,7 @@ public interface ItransDAO {
 
 	public List<ItransDTO> listItrans(int u_no);
 
-	public IuserDTO writeItrans(int u_no);
+	public ItransDTO writeItrans(int u_no);
 
 	public void insertItrans(ItransDTO dto);
 

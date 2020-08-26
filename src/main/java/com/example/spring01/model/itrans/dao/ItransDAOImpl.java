@@ -20,11 +20,11 @@ public class ItransDAOImpl implements ItransDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.selectList("itrans.itrans_list", u_no);
 	}
-	
+
 	@Override
-	public IuserDTO writeItrans(int u_no) {
+	public ItransDTO writeItrans(int u_no) {
 		// TODO Auto-generated method stub
-		return sqlSession.selectOne("itrans.itrans_write",u_no);
+		return sqlSession.selectOne("itrans.itrans_write", u_no);
 	}
 
 	@Override

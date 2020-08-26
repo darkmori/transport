@@ -84,10 +84,10 @@ public class IuserController {
 		int userno = idto.getU_no();
 		if (userno != 0) {
 			session.setAttribute("u_mail", dto.getU_mail());
-			System.out.println(session.getAttribute("u_mail"));
+//			System.out.println(session.getAttribute("u_mail"));
 			//session.setAttribute("u_no", userno);
 			mav.addObject("u_no", userno);
-			mav.setViewName("redirect:/itrans/list.do");
+			mav.setViewName("redirect:/itrans/list.do/{u_no}");
 //			mav.addObject("msg", "success");
 		} else {
 			mav.setViewName("redirect:/iuser/login.do");

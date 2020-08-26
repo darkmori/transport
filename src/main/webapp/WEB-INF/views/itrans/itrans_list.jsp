@@ -58,7 +58,8 @@
 			</tr>
 		</tfoot>
 	</table>
-	<input type="button" class="ui large primary submit right floated button" onclick="location.href='${path}/itrans/write.do'" value="登録">
+	<%-- 	<input type="button" class="ui large primary submit right floated button" onclick="location.href='${path}/itrans/write.do/${u_no}'" value="登録"> --%>
+	<input type="button" class="ui large primary submit right floated button" onclick="location.href='${path}/itrans/write.do/${u_no}'" value="登録">
 
 </body>
 </html>
