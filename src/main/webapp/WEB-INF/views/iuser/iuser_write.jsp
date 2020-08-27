@@ -65,7 +65,7 @@
 			<div class="field">
 				<div class="ui left icon input">
 					<i class="envelope icon"></i>
-					<input type="text" name="u_mail" id="u_mail" placeholder="電話番号">
+					<input type="text" name="u_tel" id="u_tel" placeholder="電話番号">
 				</div>
 			</div>
 			<div class="inline fields">
@@ -99,6 +99,7 @@
 			var u_katafirst = $("#u_katafirst").val();
 			var u_katalast = $("#u_katalast").val();
 			var u_gender = $("#u_gender").val();
+			var u_tel = $("#u_tel").val();
 			var u_admin = $("#u_admin").val();
 
 			if (u_mail == "") {

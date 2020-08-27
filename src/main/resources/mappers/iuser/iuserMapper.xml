@@ -13,9 +13,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<insert id="iuser_insert">
 		insert into iuser(
-		u_mail,u_password,u_namefirst,u_namelast,u_katafirst,u_katalast,u_gender,u_admin)
+		u_mail,u_password,u_namefirst,u_namelast,u_katafirst,u_katalast,u_tel,u_gender,u_admin)
 		values(
-		#{u_mail},#{u_password},#{u_namefirst},#{u_namelast},#{u_katafirst},#{u_katalast},#{u_gender},#{u_admin}
+		#{u_mail},#{u_password},#{u_namefirst},#{u_namelast},#{u_katafirst},#{u_katalast},#{u_tel},#{u_gender},#{u_admin}
 		)
 	</insert>
 
@@ -34,6 +34,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		u_katafirst = #{u_katafirst},
 		u_katalast = #{u_katalast},
 		u_gender = #{u_gender},
+		u_tel = #{u_tel},
 		u_admin = #{u_admin}
 		where u_no = #{u_no}
 	</update>

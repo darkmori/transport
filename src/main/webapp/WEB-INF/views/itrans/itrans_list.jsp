@@ -1,9 +1,11 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
+<title>交通経費リスト</title>
 <%@include file="../include/head.jsp"%>
 <body>
 
@@ -12,14 +14,14 @@
 	<table class="ui yellow celled table">
 		<thead>
 			<tr class="text-center" style="font-weight: bolder;">
-				<th class="two wide">日付</th>
-				<th class="two wide">交通手段</th>
+				<th class="one wide">日付</th>
+				<th class="one wide">交通手段</th>
 				<th class="two wide">出発地</th>
 				<th class="two wide">到着地</th>
-				<th>取引先</th>
+				<th class="two wide">取引先</th>
 				<th class="one wide">片/往</th>
-				<th>摘要</th>
-				<th class="two wide" style="text-align: left;">金額</th>
+				<th class="two wide">備考</th>
+				<th class="one wide" style="text-align: left;">金額</th>
 				<th class="one wide">修正</th>
 			</tr>
 		</thead>

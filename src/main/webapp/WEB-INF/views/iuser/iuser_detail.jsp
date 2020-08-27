@@ -13,15 +13,15 @@
 	<table class="ui yellow celled table">
 		<thead>
 			<tr class="text-center" style="font-weight: bolder;">
-				<th class="two wide">日付</th>
-				<th class="two wide">交通手段</th>
+				<th class="one wide">日付</th>
+				<th class="one wide">交通手段</th>
 				<th class="two wide">出発地</th>
 				<th class="two wide">到着地</th>
-				<th>取引先</th>
+				<th class="two wide">取引先</th>
 				<th class="one wide">片/往</th>
-				<th>摘要</th>
-				<th class="two wide" style="text-align: left;">金額</th>
-				<th>チェック</th>
+				<th class="two wide">摘要</th>
+				<th class="one wide" style="text-align: left;">金額</th>
+				<th class="one wide">チェック</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -40,7 +40,7 @@
 					<td><input type="checkbox"> <input type="checkbox">
 						<input type="checkbox"></td>
 				</tr>
-				<c:set var="sum" value="${sum+row.t_money }" />
+				<c:set var="sum" value="${sum+row.t_money}" />
 			</c:forEach>
 		</tbody>
 		<tfoot>

@@ -137,7 +137,7 @@
 			<div class="field">
 				<div class="ui left icon input">
 					<i class="yen sign icon"></i>
-					<input type="text" name="t_money" id="t_money" placeholder="金額  (必須)" value="${dto.t_money}">
+					<input type="number" name="t_money" id="t_money" placeholder="金額  (必須)" value="${dto.t_money}">
 				</div>
 			</div>
 		</div>

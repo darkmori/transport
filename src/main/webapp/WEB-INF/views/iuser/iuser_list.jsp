@@ -10,7 +10,7 @@
 
 	<%@include file="../include/admin_header.jsp"%>
 
-	<table class="ui yellow celled table">
+	<table class="ui red celled table">
 		<thead>
 			<tr class="text-center" style="font-weight: bolder;">
 				<th class="one wide">番号</th>
@@ -43,6 +43,6 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	<input type="button" class="ui large primary submit button" onclick="location.href='${path}/iuser/write'" value="登録">
+	<input type="button" class="ui large primary submit right floated button" onclick="location.href='${path}/iuser/write'" value="登録">
 </body>
 </html>
