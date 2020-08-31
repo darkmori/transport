@@ -6,7 +6,7 @@
 <html>
 
 <%@include file="../include/head.jsp"%>
-
+<title>社員登録</title>
 <style>
 #iuser_form {
 	padding-top: 80px;
@@ -157,29 +157,13 @@
 
 		$('.ui.dropdown').dropdown();
 
-		$(document)
-				.ready(
-						function() {
-							$('#input_text')
-									.keyup(
-											function() {
-												if ($(this).val().length > $(
-														this).attr('maxlength')) {
-													alert(maxlength
-															+ '以下に入力してください。');
-													$(this)
-															.val(
-																	$(this)
-																			.val()
-																			.substr(
-																					0,
-																					$(
-																							this)
-																							.attr(
-																									'maxlength')));
-												}
-											});
-						});
+		$(document).ready(function() {$('#input_text').keyup(function() {
+			if ($(this).val().length > $(this).attr('maxlength')) {
+				alert(maxlength+ '以下に入力してください。');
+				$(this).val($(this).val().substr(0,$(this).attr('maxlength')));
+			}
+			});
+		});
 	</script>
 </body>
 

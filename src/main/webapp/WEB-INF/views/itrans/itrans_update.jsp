@@ -6,7 +6,7 @@
 <html>
 
 <%@include file="../include/head.jsp"%>
-
+<title>交通費修正</title>
 <style>
 #itrans_form {
 	padding-top: 80px;

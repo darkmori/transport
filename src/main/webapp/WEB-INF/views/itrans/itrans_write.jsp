@@ -6,6 +6,7 @@
 <html>
 
 <%@include file="../include/head.jsp"%>
+<title>交通費登録</title>
 <style>
 #itrans_form {
 	margin-top: 80px;

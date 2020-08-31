@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <html>
 <%@include file="../include/head.jsp"%>
+<title>交通費承認</title>
 <body>
 
 	<%@include file="../include/admin_header.jsp"%>
