@@ -41,34 +41,20 @@
 			</div>
 			<c:choose>
 				<c:when test="${dto.u_gender == 'm'}">
-					<div class="inline fields">
-						<div class="field">
-							<div class="ui radio chekbox">
-								<input type="radio" name="u_gender" id="u_gender" value="m" checked="checked">
-								男
-							</div>
-						</div>
-						<div class="field">
-							<div class="ui radio chekbox">
-								<input type="radio" name="u_gender" id="u_gender" value="f">
-								女
-							</div>
-						</div>
+					<div class="field">
+						<select name="u_gender" id="u_gender" class="ui selection dropdown">
+							<option value="m" selected="selected">男</option>
+							<option value="f">女</option>
+						</select>
 					</div>
 				</c:when>
 				<c:when test="${dto.u_gender == 'f'}">
-					<div class="inline fields">
+					<div class="field">
 						<div class="field">
-							<div class="ui radio chekbox">
-								<input type="radio" name="u_gender" id="u_gender" value="m">
-								<i class="male icon"></i>
-							</div>
-						</div>
-						<div class="field">
-							<div class="ui radio chekbox">
-								<input type="radio" name="u_gender" id="u_gender" value="f" checked="checked">
-								<i class="female icon"></i>
-							</div>
+							<select name="u_gender" id="u_gender" class="ui selection dropdown">
+								<option value="m">男</option>
+								<option value="f" selected="selected">女</option>
+							</select>
 						</div>
 					</div>
 				</c:when>
@@ -93,36 +79,20 @@
 			</div>
 
 			<c:choose>
-				<c:when test="${dto.u_admin == '1' }">
-					<div class="inline fields">
-						<div class="field">
-							<div class="ui radio chekbox">
-								<input type="radio" name="u_admin" id="u_admin" value="1" checked="checked">
-								管理者
-							</div>
-						</div>
-						<div class="field">
-							<div class="ui radio chekbox">
-								<input type="radio" name="u_admin" id="u_admin" value="2">
-								一般
-							</div>
-						</div>
+				<c:when test="${dto.u_admin == '1'}">
+					<div class="field">
+						<select name="u_admin" id="u_admin" class="ui selection dropdown">
+							<option value="1" selected="selected">管理者</option>
+							<option value="2">一般</option>
+						</select>
 					</div>
 				</c:when>
 				<c:when test="${dto.u_admin == '2'}">
-					<div class="inline fields">
-						<div class="field">
-							<div class="ui radio chekbox">
-								<input type="radio" name="u_admin" id="u_admin" value="1">
-								管理者
-							</div>
-						</div>
-						<div class="field">
-							<div class="ui radio chekbox">
-								<input type="radio" name="u_admin" id="u_admin" value="2" checked="checked">
-								一般
-							</div>
-						</div>
+					<div class="field">
+						<select name="u_admin" id="u_admin" class="ui selection dropdown">
+							<option value="1">管理者</option>
+							<option value="2" selected="selected">一般</option>
+						</select>
 					</div>
 				</c:when>
 			</c:choose>

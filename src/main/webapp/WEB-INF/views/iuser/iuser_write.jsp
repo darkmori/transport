@@ -43,19 +43,11 @@
 					<input type="text" name="u_katalast" id="u_katalast" placeholder="名前(カナ) ">
 				</div>
 			</div>
-			<div class="inline fields">
-				<div class="field">
-					<div class="ui radio chekbox">
-						<input type="radio" name="u_gender" id="u_gender" value="m" checked="checked">
-						男
-					</div>
-				</div>
-				<div class="field">
-					<div class="ui radio chekbox">
-						<input type="radio" name="u_gender" id="u_gender" value="f">
-						女
-					</div>
-				</div>
+			<div class="field">
+				<select name="u_gender" id="u_gender" class="ui selection dropdown">
+					<option value="m">男</option>
+					<option value="f">女</option>
+				</select>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
@@ -75,19 +67,11 @@
 					<input type="text" name="u_tel" id="u_tel" placeholder="電話番号">
 				</div>
 			</div>
-			<div class="inline fields">
-				<div class="field">
-					<div class="ui radio chekbox">
-						<input type="radio" name="u_admin" id="u_admin" value="1" checked="checked">
-						管理者
-					</div>
-				</div>
-				<div class="field">
-					<div class="ui radio chekbox">
-						<input type="radio" name="u_admin" id="u_admin" value="2">
-						一般
-					</div>
-				</div>
+			<div class="field">
+				<select name="u_admin" id="u_admin" class="ui selection dropdown">
+					<option value="1">管理者</option>
+					<option value="2">一般</option>
+				</select>
 			</div>
 			<div>
 				<input type="button" value="登録" class="ui primary button" onclick="javascript:itrans_write()">
@@ -173,14 +157,29 @@
 
 		$('.ui.dropdown').dropdown();
 
-		$(document).ready(function() {
-			$('#input_text').keyup(function() {
-				if ($(this).val().length > $(this).attr('maxlength')) {
-					alert(maxlength+'以下に入力してください。');
-					$(this).val($(this).val().substr(0,$(this).attr('maxlength')));
-				}
-			});
-		});
+		$(document)
+				.ready(
+						function() {
+							$('#input_text')
+									.keyup(
+											function() {
+												if ($(this).val().length > $(
+														this).attr('maxlength')) {
+													alert(maxlength
+															+ '以下に入力してください。');
+													$(this)
+															.val(
+																	$(this)
+																			.val()
+																			.substr(
+																					0,
+																					$(
+																							this)
+																							.attr(
+																									'maxlength')));
+												}
+											});
+						});
 	</script>
 </body>
 
