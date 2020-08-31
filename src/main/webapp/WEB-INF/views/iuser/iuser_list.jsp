@@ -4,7 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
-<title>会員管理</title>
+<title>社員管理</title>
 <%@include file="../include/head.jsp"%>
 <body>
 
@@ -16,7 +16,7 @@
 				<th class="one wide">番号</th>
 				<th class="two wide">名前(漢字)</th>
 				<th class="two wide">名前(カナ)</th>
-				<th class="one wide">姓別</th>
+				<th class="one wide">性別</th>
 				<th class="two wide">登録メール</th>
 				<th class="two wide">電話番号</th>
 				<th class="one wide">役割</th>

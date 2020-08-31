@@ -30,8 +30,8 @@
 				<tr>
 					<td>${row.t_date}</td>
 					<td>${row.t_way}</td>
-					<td>${row.t_start}</td>
-					<td>${row.t_end}</td>
+					<td>${row.t_rosen1}&nbsp;${row.t_start}</td>
+					<td>${row.t_rosen2}&nbsp;${row.t_end}</td>
 					<td>${row.t_visit}</td>
 					<td>${row.t_goback}</td> 
 					<td>${row.t_memo}</td>

@@ -7,10 +7,17 @@
 
 <%@include file="../include/head.jsp"%>
 
+<style>
+#iuser_form {
+	padding-top: 80px;
+	width: 400px;
+}
+</style>
+
 <body>
 	<%@include file="../include/admin_header.jsp"%>
 
-	<form method="POST" role="form" class="ui large form container" name="itrans_form" style="width: 350px">
+	<form method="POST" role="form" class="ui large form container" name="iuser_form" id="iuser_form">
 		<div class="ui segment">
 			<div class="field">
 				<div class="ui left icon input">
@@ -133,8 +140,8 @@
 				$("#u_katalast").focus();
 				return;
 			}
-			document.itrans_form.action = "${path}/iuser/insert";
-			document.itrans_form.submit();
+			document.iuser_form.action = "${path}/iuser/insert";
+			document.iuser_form.submit();
 		}
 
 		$('#date_calendar').calendar(
@@ -163,7 +170,17 @@
 						}
 					}
 				});
+
 		$('.ui.dropdown').dropdown();
+
+		$(document).ready(function() {
+			$('#input_text').keyup(function() {
+				if ($(this).val().length > $(this).attr('maxlength')) {
+					alert(maxlength+'以下に入力してください。');
+					$(this).val($(this).val().substr(0,$(this).attr('maxlength')));
+				}
+			});
+		});
 	</script>
 </body>
 

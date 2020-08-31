@@ -11,7 +11,7 @@
 
 	<%@include file="../include/user_header.jsp"%>
 
-	<table class="ui yellow celled table">
+	<table class="ui green celled table">
 		<thead>
 			<tr class="text-center" style="font-weight: bolder;">
 				<th class="one wide">日付</th>
@@ -31,8 +31,8 @@
 				<tr>
 					<td>${row.t_date}</td>
 					<td>${row.t_way}</td>
-					<td>${row.t_start}</td>
-					<td>${row.t_end}</td>
+					<td>${row.t_rosen1}&nbsp;${row.t_start}</td>
+					<td>${row.t_rosen2}&nbsp;${row.t_end}</td>
 					<td>${row.t_visit}</td>
 					<td>${row.t_goback}</td>
 					<td>${row.t_memo}</td>

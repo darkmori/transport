@@ -8,7 +8,7 @@
 <%@include file="../include/head.jsp"%>
 
 <style>
-#form1 {
+#itrans_form {
 	padding-top: 80px;
 	width: 770px;
 }
@@ -16,7 +16,7 @@
 <body>
 	<%@include file="../include/user_header.jsp"%>
 
-	<form method="POST" role="form" class="ui large form container" name="itrans_form" id="form1">
+	<form method="POST" role="form" class="ui large form container" name="itrans_form" id="itrans_form">
 		<div class="ui segment">
 			<div>
 				<input type="hidden" name="u_no" id="u_no" value="${dto.u_no}">
@@ -38,35 +38,24 @@
 								<option value="電車" selected="selected">電車</option>
 								<option value="バス">バス</option>
 								<option value="タクシー">タクシー</option>
-								<option value="車">車</option>
 								<option value="その他">その他</option>
 							</c:when>
 							<c:when test="${dto.t_way == 'バス'}">
 								<option value="電車">電車</option>
 								<option value="バス" selected="selected">バス</option>
 								<option value="タクシー">タクシー</option>
-								<option value="車">車</option>
 								<option value="その他">その他</option>
 							</c:when>
 							<c:when test="${dto.t_way == 'タクシー'}">
 								<option value="電車">電車</option>
 								<option value="バス">バス</option>
 								<option value="タクシー" selected="selected">タクシー</option>
-								<option value="車">車</option>
-								<option value="その他">その他</option>
-							</c:when>
-							<c:when test="${dto.t_way == '車'}">
-								<option value="電車">電車</option>
-								<option value="バス">バス</option>
-								<option value="タクシー">タクシー</option>
-								<option value="車" selected="selected">車</option>
 								<option value="その他">その他</option>
 							</c:when>
 							<c:when test="${dto.t_way == 'その他'}">
 								<option value="電車">電車</option>
 								<option value="バス">バス</option>
 								<option value="タクシー">タクシー</option>
-								<option value="車">車</option>
 								<option value="その他" selected="selected">その他</option>
 							</c:when>
 						</c:choose>
@@ -84,6 +73,20 @@
 					<div class="ui left icon input">
 						<i class="map marker icon"></i>
 						<input type="text" name="t_end" id="t_end" placeholder="到着地  (必須)" value="${dto.t_end} ">
+					</div>
+				</div>
+			</div>
+			<div class="two fields">
+				<div class="field">
+					<div class="ui left icon input">
+						<i class="location train icon"></i>
+						<input type="text" name="t_rosen1" id="t_rosen1" placeholder="電車の場合、路線を入力してください。" value="${dto.t_rosen1}">
+					</div>
+				</div>
+				<div class="field">
+					<div class="ui left icon input">
+						<i class="location train icon"></i>
+						<input type="text" name="t_rosen2" id="t_rosen2" placeholder="電車の場合、路線を入力してください。" value="${dto.t_rosen2}">
 					</div>
 				</div>
 			</div>
@@ -109,18 +112,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="field">
-				<div class="ui left icon input">
-					<i class="location train icon"></i>
-					<input type="text" name="t_rosen1" id="t_rosen1" placeholder="電車の場合、路線を入力してください。" value="${dto.t_rosen1}">
-				</div>
-			</div>
-			<div class="field">
-				<div class="ui left icon input">
-					<i class="location train icon"></i>
-					<input type="text" name="t_rosen2" id="t_rosen2" placeholder="電車の場合、路線を入力してください。" value="${dto.t_rosen2}">
-				</div>
-			</div>
+			
 			<div class="field">
 				<div class="ui left icon input">
 					<i class="location train icon"></i>
