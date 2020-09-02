@@ -95,7 +95,7 @@
 			<div class="field">
 				<div class="ui left icon input">
 					<i class="yen sign icon"></i>
-					<input type="number" name="t_money" id="t_money" placeholder="金額  (必須)" min="1" maxlength="10" oninput="numberMaxLength(this)">
+					<input type="text" name="t_money" id="t_money" placeholder="金額  (必須)" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 				</div>
 			</div>
 		</div>
@@ -104,8 +104,7 @@
 			<input type="button" value="キャンセル" class="ui button" onclick="location.href='${path}/itrans/list.do/${u_no}'">
 		</div>
 	</form>
-
-
+	<!--会員管理、入力-->
 	<script>
 		function itrans_write() {
 			var u_no = $("#u_no").val();
@@ -178,11 +177,6 @@
 				});
 		$('.ui.dropdown').dropdown();
 
-		function numberMaxLength(e){
-	        if(e.value.length > e.maxLength){
-	            e.value = e.value.slice(0, e.maxLength);
-	        }
-	    }
 	</script>
 </body>
 

@@ -5,12 +5,18 @@
 <!DOCTYPE html>
 <html>
 <title>社員修正</title>
+<style>
+#iuser_form {
+	padding-top: 50px;
+	width: 400px;
+}
+</style>
 
 <%@include file="../include/head.jsp"%>
 
 <body>
 	<%@include file="../include/admin_header.jsp"%>
-	<form method="POST" role="form" class="ui large form container" name="itrans_form" style="width: 350px">
+	<form method="POST" role="form" class="ui large form container" name="iuser_form" id="iuser_form">
 		<div class="ui segment">
 			<div>
 				<input type="hidden" name="u_no" id="u_no" value="${dto.u_no} ">
@@ -73,7 +79,7 @@
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
-					<i class="lock icon"></i>
+					<i class="phone alternate icon"></i>
 					<input type="text" name="u_tel" id="u_tel" placeholder="電話番号" value="${dto.u_tel }">
 				</div>
 			</div>
@@ -148,8 +154,8 @@
 				$("#u_katalast").focus();
 				return;
 			}
-			document.itrans_form.action = "${path}/iuser/update";
-			document.itrans_form.submit();
+			document.iuser_form.action = "${path}/iuser/update";
+			document.iuser_form.submit();
 		}
 
 		$('.ui.dropdown').dropdown();

@@ -16,7 +16,7 @@
 <body>
 	<%@include file="../include/user_header.jsp"%>
 
-	<form method="POST" role="form" class="ui large form container" name="itrans_form" id="itrans_form">
+	<form method="POST" role="form" class="ui large form container" name="itrans_form" id="itrans_form" autocomplete="off">
 		<div class="ui segment">
 			<div>
 				<input type="hidden" name="u_no" id="u_no" value="${dto.u_no}">
@@ -28,7 +28,7 @@
 				<div class="ui calendar field" id="date_calendar">
 					<div class="ui input left icon">
 						<i class="calendar icon"></i>
-						<input type="text" placeholder="日付 (必須)" id="t_date" name="t_date" value="${dto.t_date}">
+						<input type="text" placeholder="日付 (必須)" id="t_date" name="t_date" value="${dto.t_date}" maxlength="15">
 					</div>
 				</div>
 				<div class="field">
@@ -66,13 +66,13 @@
 				<div class="field">
 					<div class="ui left icon input">
 						<i class="location arrow icon"></i>
-						<input type="text" name="t_start" id="t_start" placeholder="出発地 (必須)" value="${dto.t_start} ">
+						<input type="text" name="t_start" id="t_start" placeholder="出発地 (必須)" value="${dto.t_start} " maxlength="50">
 					</div>
 				</div>
 				<div class="field">
 					<div class="ui left icon input">
 						<i class="map marker icon"></i>
-						<input type="text" name="t_end" id="t_end" placeholder="到着地  (必須)" value="${dto.t_end} ">
+						<input type="text" name="t_end" id="t_end" placeholder="到着地  (必須)" value="${dto.t_end} " maxlength="50">
 					</div>
 				</div>
 			</div>
@@ -80,13 +80,13 @@
 				<div class="field">
 					<div class="ui left icon input">
 						<i class="location train icon"></i>
-						<input type="text" name="t_rosen1" id="t_rosen1" placeholder="電車の場合、路線を入力してください。" value="${dto.t_rosen1}">
+						<input type="text" name="t_rosen1" id="t_rosen1" placeholder="電車の場合、路線を入力してください。" value="${dto.t_rosen1}" maxlength="50">
 					</div>
 				</div>
 				<div class="field">
 					<div class="ui left icon input">
 						<i class="location train icon"></i>
-						<input type="text" name="t_rosen2" id="t_rosen2" placeholder="電車の場合、路線を入力してください。" value="${dto.t_rosen2}">
+						<input type="text" name="t_rosen2" id="t_rosen2" placeholder="電車の場合、路線を入力してください。" value="${dto.t_rosen2}" maxlength="50">
 					</div>
 				</div>
 			</div>
@@ -108,7 +108,7 @@
 				<div class="field">
 					<div class="ui left icon input">
 						<i class="briefcase icon"></i>
-						<input type="text" name="t_visit" id="t_visit" placeholder="訪問先" value="${dto.t_visit}">
+						<input type="text" name="t_visit" id="t_visit" placeholder="訪問先" value="${dto.t_visit}" maxlength="50">
 					</div>
 				</div>
 			</div>
@@ -116,20 +116,20 @@
 			<div class="field">
 				<div class="ui left icon input">
 					<i class="location train icon"></i>
-					<input type="text" name="t_rosen3" id="t_rosen3" placeholder="電車の場合、路線を入力してください。" value="${dto.t_rosen3}">
+					<input type="text" name="t_rosen3" id="t_rosen3" placeholder="電車の場合、路線を入力してください。" value="${dto.t_rosen3}" maxlength="50">
 				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
 					<i class="pencil alternate icon"></i>
-					<input type="text" name="t_memo" id="t_memo" placeholder="備考" value="${dto.t_memo}">
+					<input type="text" name="t_memo" id="t_memo" placeholder="備考" value="${dto.t_memo}" maxlength="50">
 
 				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
 					<i class="yen sign icon"></i>
-					<input type="number" name="t_money" id="t_money" placeholder="金額  (必須)" value="${dto.t_money}">
+					<input type=text name="t_money" id="t_money" placeholder="金額  (必須)" value="${dto.t_money}" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 				</div>
 			</div>
 		</div>
@@ -213,6 +213,7 @@
 					}
 				});
 		$('.ui.dropdown').dropdown();
+
 	</script>
 </body>
 

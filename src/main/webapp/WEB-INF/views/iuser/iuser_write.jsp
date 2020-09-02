@@ -9,7 +9,7 @@
 <title>社員登録</title>
 <style>
 #iuser_form {
-	padding-top: 80px;
+	padding-top: 50px;
 	width: 400px;
 }
 </style>
@@ -22,25 +22,25 @@
 			<div class="field">
 				<div class="ui left icon input">
 					<i class="address book icon"></i>
-					<input type="text" name="u_namefirst" id="u_namefirst" placeholder="苗字(漢字)">
+					<input type="text" name="u_namefirst" id="u_namefirst" placeholder="苗字(漢字)" maxlength="10">
 				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
 					<i class="address book outline icon"></i>
-					<input type="text" name="u_namelast" id="u_namelast" placeholder="名前(漢字)">
+					<input type="text" name="u_namelast" id="u_namelast" placeholder="名前(漢字)" maxlength="10">
 				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
 					<i class="address card icon"></i>
-					<input type="text" name="u_katafirst" id="u_katafirst" placeholder="苗字(カナ)">
+					<input type="text" name="u_katafirst" id="u_katafirst" placeholder="苗字(カナ)" maxlength="30">
 				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
 					<i class="address card outline icon"></i>
-					<input type="text" name="u_katalast" id="u_katalast" placeholder="名前(カナ) ">
+					<input type="text" name="u_katalast" id="u_katalast" placeholder="名前(カナ)" maxlength="30">
 				</div>
 			</div>
 			<div class="field">
@@ -52,19 +52,19 @@
 			<div class="field">
 				<div class="ui left icon input">
 					<i class="envelope icon"></i>
-					<input type="email" name="u_mail" id="u_mail" placeholder="メール  (必須)">
+					<input type="email" name="u_mail" id="u_mail" placeholder="メール  (必須)" maxlength="50">
 				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
 					<i class="lock icon"></i>
-					<input type="password" name="u_password" id="u_password" placeholder="パスワード  (必須)">
+					<input type="password" name="u_password" id="u_password" placeholder="パスワード  (必須)" maxlength="20">
 				</div>
 			</div>
 			<div class="field">
 				<div class="ui left icon input">
-					<i class="envelope icon"></i>
-					<input type="text" name="u_tel" id="u_tel" placeholder="電話番号">
+					<i class="phone alternate icon"></i>
+					<input type="text" name="u_tel" id="u_tel" placeholder="電話番号" maxlength="15">
 				</div>
 			</div>
 			<div class="field">
@@ -75,7 +75,7 @@
 			</div>
 			<div>
 				<input type="button" value="登録" class="ui primary button" onclick="javascript:itrans_write()">
-				<input type="button" value="トップへ" class="ui button" onclick="location.href='${path}/iuser/list'">
+				<input type="button" value="キャンセル" class="ui button" onclick="location.href='${path}/iuser/list'">
 			</div>
 		</div>
 	</form>
@@ -150,7 +150,6 @@
 							var day = date.getDate();
 							var month = date.getMonth() + 1;
 							return year + '-' + month + '-' + day;
-							/* return year + '/' + month + '/' + day; */
 						}
 					}
 				});
