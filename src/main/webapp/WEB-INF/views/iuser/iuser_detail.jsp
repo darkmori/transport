@@ -9,7 +9,7 @@
 <body>
 
 	<%@include file="../include/admin_header.jsp"%>
-	<form action="">
+	<form method="POST" role="form" class="ui large form container">
 		<table class="ui yellow celled table">
 			<thead>
 				<tr class="text-center" style="font-weight: bolder;">
@@ -84,6 +84,7 @@
 			</tfoot>
 		</table>
 	</form>
+
 
 </body>
 </html>

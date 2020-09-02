@@ -14,15 +14,15 @@
 	<table class="ui green celled table">
 		<thead>
 			<tr class="text-center" style="font-weight: bolder;">
-				<th class="one wide">日付</th>
-				<th class="one wide">交通手段</th>
-				<th class="two wide">出発地</th>
-				<th class="two wide">到着地</th>
-				<th class="two wide">取引先</th>
-				<th class="one wide">片/往</th>
-				<th class="two wide">備考</th>
-				<th class="one wide" style="text-align: left;">金額</th>
-				<th class="one wide">修正</th>
+				<th class="one wide center aligned">日付</th>
+				<th class="one wide center aligned">交通手段</th>
+				<th class="two wide center aligned">出発地</th>
+				<th class="two wide center aligned">到着地</th>
+				<th class="two wide center aligned">取引先</th>
+				<th class="one wide center aligned">片/往</th>
+				<th class="two wide center aligned">備考</th>
+				<th class="one wide center aligned">金額</th>
+				<th class="one wide center aligned">修正</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -41,6 +41,9 @@
 						<fmt:formatNumber value='${row.t_money}' pattern="#,###" />
 					</td>
 					<td>
+						<c:if test="${row.t_check1 == '1'}&&${row.t_check2 == '1' }&&${row.t_check3 == '1' }">
+							<i class="large green checkmark icon"></i>
+						</c:if>
 						<a href='${path}/itrans/modify.do/${row.t_no}'> <i class="edit icon"></i>
 						</a> <a href='${path}/itrans/delete.do/${row.t_no}' onclick="return confirm('本当に削除しますか。');"> <i class="trash alternate icon" style="color: red;"></i>
 						</a>
