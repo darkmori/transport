@@ -9,7 +9,7 @@
 <body>
 
 	<%@include file="../include/admin_header.jsp"%>
-	<form method="POST" role="form" class="ui large form container">
+	<form method="POST" role="form" class="ui large form">
 		<table class="ui yellow celled table">
 			<thead>
 				<tr class="text-center" style="font-weight: bolder;">

@@ -14,7 +14,7 @@
 }
 </style>
 <body>
-	<%@include file="../include/user_header.jsp"%>
+	<%@include file="../include/update_header.jsp"%>
 
 	<form method="POST" role="form" class="ui large form container" name="itrans_form" id="itrans_form" autocomplete="off">
 		<div class="ui segment">
