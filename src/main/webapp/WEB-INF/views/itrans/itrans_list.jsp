@@ -41,7 +41,7 @@
 						<fmt:formatNumber value='${row.t_money}' pattern="#,###" />
 					</td>
 					<td>
-						<c:if test="${row.t_check1 == '1'}&&${row.t_check2 == '1' }&&${row.t_check3 == '1' }">
+						<c:if test="${row.t_check == '1'}">
 							<i class="large green checkmark icon"></i>
 						</c:if>
 						<a href='${path}/itrans/modify.do/${row.t_no}'> <i class="edit icon"></i>

@@ -4,8 +4,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
-<%@include file="../include/head.jsp"%>
 <title>交通費承認</title>
+<%@include file="../include/head.jsp"%>
 <body>
 
 	<%@include file="../include/admin_header.jsp"%>
@@ -40,33 +40,7 @@
 							<fmt:formatNumber value='${row.t_money}' pattern="#,###" />
 						</td>
 						<td>
-							<c:choose>
-								<c:when test="${row.t_check1 ='1'}">
-									<input type="checkbox" id="t_check1" name="t_check1" checked="checked">
-								</c:when>
-								<c:otherwise>
-									<input type="checkbox" id="t_check2" name="t_check2">
-								</c:otherwise>
-							</c:choose>
-							<c:choose>
-								<c:when test="${row.t_check2 ='1'}">
-									<input type="checkbox" id="t_check2" name="t_check2" checked="checked">
-								</c:when>
-								<c:otherwise>
-									<input type="checkbox" id="t_check2" name="t_check2">
-								</c:otherwise>
-							</c:choose>
-							<c:choose>
-								<c:when test="${row.t_check3 ='1'}">
-									<input type="checkbox" id="t_check3" name="t_check3" checked="checked">
-								</c:when>
-								<c:otherwise>
-									<input type="checkbox" id="t_check3" name="t_check3">
-								</c:otherwise>
-							</c:choose>
-							<c:if test="${row.t_check1 ='1'}&&${row.t_check2 ='1'}&&${row.t_check3 ='1'}">
-								<i class="large green checkmark icon"></i>
-							</c:if>
+							<a href="#"> <i class="red checkmark right icon"></i></a>
 						</td>
 					</tr>
 					<c:set var="sum" value="${sum+row.t_money}" />
