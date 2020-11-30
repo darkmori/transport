@@ -48,6 +48,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from itrans where u_no = #{u_no} order by t_date asc
 	</select>
 
+	<update id="iuser_check">
+		update itrans set
+		t_check = '1'
+		where t_no = #{t_no}
+	</update>
+
 	<select id="loginCheck" resultType="com.example.spring01.model.iuser.dto.IuserDTO">
 		select * from iuser
 		where u_mail = #{u_mail} and u_password = #{u_password}

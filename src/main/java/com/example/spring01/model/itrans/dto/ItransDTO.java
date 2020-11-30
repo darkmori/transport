@@ -17,9 +17,7 @@ public class ItransDTO {
 	private String t_goback;
 	private String t_memo;
 	private int t_money;
-	private int t_check1;
-	private int t_check2;
-	private int t_check3;
+	private int t_check;
 
 	public int getU_no() {
 		return u_no;
@@ -125,28 +123,12 @@ public class ItransDTO {
 		this.t_money = t_money;
 	}
 
-	public int getT_check1() {
-		return t_check1;
+	public int getT_check() {
+		return t_check;
 	}
 
-	public void setT_check1(int t_check1) {
-		this.t_check1 = t_check1;
-	}
-
-	public int getT_check2() {
-		return t_check2;
-	}
-
-	public void setT_check2(int t_check2) {
-		this.t_check2 = t_check2;
-	}
-
-	public int getT_check3() {
-		return t_check3;
-	}
-
-	public void setT_check3(int t_check3) {
-		this.t_check3 = t_check3;
+	public void setT_check(int t_check) {
+		this.t_check = t_check;
 	}
 
 	@Override
@@ -154,7 +136,7 @@ public class ItransDTO {
 		return "ItransDTO [u_no=" + u_no + ", t_no=" + t_no + ", t_date=" + t_date + ", t_way=" + t_way + ", t_start="
 				+ t_start + ", t_end=" + t_end + ", t_rosen1=" + t_rosen1 + ", t_rosen2=" + t_rosen2 + ", t_rosen3="
 				+ t_rosen3 + ", t_visit=" + t_visit + ", t_goback=" + t_goback + ", t_memo=" + t_memo + ", t_money="
-				+ t_money + ", t_check1=" + t_check1 + ", t_check2=" + t_check2 + ", t_check3=" + t_check3 + "]";
+				+ t_money + ", t_check=" + t_check + "]";
 	}
 
 }

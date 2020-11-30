@@ -50,7 +50,7 @@ public class IuserServiceImpl implements IuserService {
 	public IuserDTO loginCheck(IuserDTO dto) {
 		return iuserDao.loginCheck(dto);
 	}
-	
+
 	@Override
 	public IuserDTO viewIuser(IuserDTO dto) {
 		// TODO Auto-generated method stub
@@ -63,6 +63,9 @@ public class IuserServiceImpl implements IuserService {
 		return iuserDao.detailIuser(u_no);
 	}
 
-	
+	@Override
+	public void checkIuser(int t_no) {
+		iuserDao.checkIuser(t_no);
+	}
 
 }

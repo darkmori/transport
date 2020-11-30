@@ -25,5 +25,5 @@ public interface IuserService {
 
 	public IuserDTO viewIuser(IuserDTO dto);
 
-
+	public void checkIuser(int t_no);
 }

@@ -28,6 +28,7 @@
 				<c:set var="sum" value="0" />
 				<c:forEach var="row" items="${dto}">
 					<tr>
+						<td hidden="hidden">${row.t_no}</td>
 						<td>${row.t_date}</td>
 						<td>${row.t_way}</td>
 						<td>${row.t_rosen1}&nbsp;${row.t_start}</td>
@@ -40,7 +41,7 @@
 							<fmt:formatNumber value='${row.t_money}' pattern="#,###" />
 						</td>
 						<td>
-							<a href="#"> <i class="red checkmark right icon"></i></a>
+							<a href='${path}/iuser/check/${row.t_no}' onclick="return confirm('本当にチェックしますか。');"> <i class="red checkmark right icon"></i></a>
 						</td>
 					</tr>
 					<c:set var="sum" value="${sum+row.t_money}" />

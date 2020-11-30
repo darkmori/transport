@@ -59,7 +59,6 @@ public class ItransController {
 	@RequestMapping(value = "update.do", method = RequestMethod.POST)
 	public String update(ItransDTO dto) {
 		itransService.updateItrans(dto);
-		System.out.println(dto.getU_no());
 
 		int u_no = dto.getU_no();
 		// return "redirect:/itrans/list.do/{u_no}";
@@ -69,6 +68,6 @@ public class ItransController {
 	@RequestMapping("delete.do/{t_no}")
 	public String delete(@PathVariable int t_no) {
 		itransService.deleteItrans(t_no);
-		return "redirect:/itrans/list.do";
+		return "redirect:/itrans/list.do/";
 	}
 }

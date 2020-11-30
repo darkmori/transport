@@ -68,6 +68,13 @@ public class IuserController {
 		return mav;
 	}
 
+	@RequestMapping("check/{t_no}")
+	public String check(@PathVariable int t_no) {
+		iuserService.checkIuser(t_no);
+
+		return "redirect:/iuser/list";
+	}
+
 	// 로그인 화면
 
 	@RequestMapping("login.do")
@@ -85,7 +92,7 @@ public class IuserController {
 		if (userno != 0) {
 			session.setAttribute("u_mail", dto.getU_mail());
 //			System.out.println(session.getAttribute("u_mail"));
-			//session.setAttribute("u_no", userno);
+			// session.setAttribute("u_no", userno);
 			mav.addObject("u_no", userno);
 			mav.setViewName("redirect:/itrans/list.do/{u_no}");
 //			mav.addObject("msg", "success");
